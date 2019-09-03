@@ -1,6 +1,6 @@
 <template>
   <div class="signin">
-    <h1> Connection"</h1>
+    <h1> Connection</h1>
       <p> </p>
     <form>
     <div class="signform">

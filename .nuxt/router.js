@@ -3,6 +3,10 @@ import Router from 'vue-router'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
+const _254648ce = () => interopDefault(import('../pages/_lang/index.vue' /* webpackChunkName: "pages/_lang/index" */))
+const _058e6e09 = () => interopDefault(import('../pages/_lang/about.vue' /* webpackChunkName: "pages/_lang/about" */))
+const _5ec280f8 = () => interopDefault(import('../pages/_lang/indexing.vue' /* webpackChunkName: "pages/_lang/indexing" */))
+
 Vue.use(Router)
 
 export const routerOptions = {
@@ -12,7 +16,19 @@ export const routerOptions = {
   linkExactActiveClass: 'nuxt-link-exact-active',
   scrollBehavior,
 
-  routes: [],
+  routes: [{
+      path: "/:lang",
+      component: _254648ce,
+      name: "lang"
+    }, {
+      path: "/:lang/about",
+      component: _058e6e09,
+      name: "lang-about"
+    }, {
+      path: "/:lang/indexing",
+      component: _5ec280f8,
+      name: "lang-indexing"
+    }],
 
   fallback: false
 }

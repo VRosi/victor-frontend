@@ -1,21 +1,11 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>Le timbre est la caractéristique sonore qui permet de différencier deux sons de <em>même intensité</em> et de <em>même hauteur</em>. C'est une grandeur de dimension complexe beaucoup utilisée pour décrire les sons.
-    </p>
+    <h1>{{$t('index.title')}}</h1>
+    <p>{{$t('index.introduction1')}}</p>
     <span>***</span>
-    <p>
-      Parler du timbre est une activité à laquelle se livre de nombreux professionnels du son allant du chef(fe) d'orchestre au designer sonore.
-      En fonction de leur interlocuteur et de leur <em>background</em>, ils se doivent d'adapter leur vocabulaire afin de pouvoir communiquer efficacement autour du son lors d'un processus de création sonore (e.g. répétion d'ensemble, séance de mixage, cours d'orchestration...).
-    </p>
+    <p>{{$t('index.introduction2')}}</p>
     <span >***</span>
-    <p>
-      Malheureusemnt certains termes de ce vocabulaire ne sont pas tous explicites, malgré une utilisation courante.
-      Cette étude a pour objectif d'étudier le sens de certains termes et de décrypter les caractéristiques acoustiques associées.
-    </p>
-
-    <h3></h3>
-
+    <p>{{$t('index.introduction3')}}</p>
   </div>
 </template>
 
@@ -23,7 +13,6 @@
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String,
   },
   data() {
     return {

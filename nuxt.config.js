@@ -30,11 +30,17 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [
-  ],
+  plugins:
+    ['~/plugins/i18n.js'], // webpack plugin,
+
   /*
   ** Nuxt.js dev-modules
   */
+  generate: {
+    routes: [
+      '/en', '/en/index', '/en/about', '/en/indexing',
+      '/fr', '/fr/index', '/fr/about', '/fr/indexing']
+  },
   buildModules: [
     '@nuxtjs/vuetify',
   ],
@@ -67,7 +73,11 @@ module.exports = {
   /*
   ** Build configuration
   */
+  router: {              // customize nuxt.js router (vue-router).
+    middleware: 'i18n'   // middleware all pages of the application
+  },
   build: {
+    vendor: ['vue-i18n'], // webpack vue-i18n.bundle.js
     /*
     ** You can extend webpack config here
     */

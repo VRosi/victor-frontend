@@ -1,28 +1,35 @@
 <template>
-  <div class="signup">
+<div class="signup">
     <h1>S'inscrire</h1>
       <p>Afin d'observer un lien entre vos réponses et votre profil,
         voici un rapide formulaire à remplir avec vos informations <br>(nothing personal)</p>
     <div class="formy">
-      <form id="form1">
-        <div class="yesno">
-          <label for="name"> <b>Nickname* : </b> </label><br>
-          <input type='text' id="Name" v-model="person.name">
-        </div>
-        <div>
-          <label for="name"> <b>Password* : </b> </label><br>
-          <input type="password" v-model="person.password">
-          <!-- <button>show / hide</button> -->
-        </div>
-        <div class="gender">
+
+      <form id="form"  @submit.prevent="submitForms" method="post" novalidate="true">
+
+
+        <div class='container'>
+          <div class>
+            <label for="name"> <b>Nom* : </b> </label><br>
+            <input type='text' placeholder="Nom" id="name" name="name" v-model="person.name"><br><br>
+            <label for="password"> <b>Mot de passe* : </b> </label><br>
+            <input type="password" placeholder="Mot de passe" id="password" v-model="person.password"><br>
+            <!-- <button>show / hide</button> -->
+          </div>
+          <div>
+            <label><b>Année de naissance* : </b></label><br>
+            <DatePicker type="year" format="yyyy" placeholder="ex : 1992" style="width: 150px" v-model="person.dob"></DatePicker><br><br>
             <label> <b>Sexe* : </b></label>
             <RoundInput :value="person.gender" @input="inputGender" name ="gender" label="Homme" fromParent="male"/>
             <RoundInput :value="person.gender" @input="inputGender" name ="gender" label="Femme" fromParent="female"/>
-            <RoundInput :value="person.gender" @input="inputGender" name ="gender" label="Autre" fromParent="other"/>
+            <RoundInput :value="person.gender" @input="inputGender" name ="gender" label="Autre" fromParent="other"/><br>
+            <label for="country"> <b>Pays de résidence* : </b> </label><br>
+            <input type='text' placeholder="Pays" id="country" v-model="person.country"><br>
+          </div>
+
         </div>
 
-        <div class="line">
-        </div>
+        <div class="line"></div>
 
       <div class="container">
         <div>
@@ -62,14 +69,18 @@
           </div>
         </div>
       </div>
-  </form>
 
-      <button type="button" name="button" @click="submitForms()">SUBMIT</button>
+      <div >
+          <input type="submit" value="Submit" >
+      </div>
 
 
-    </div>
+
+    </form>
 
   </div>
+
+</div>
 </template>
 
 <style scoped>
@@ -93,6 +104,7 @@ input {
   border: 1px solid #efefef;
   padding: 5px;
   font-size: 1em;
+  width: 200px;
 
 }
 
@@ -109,8 +121,9 @@ input {
 
 .formy {
   text-align: left;
-  padding: 20px;
-  margin: 80px auto;
+  box-sizing: content-box;
+  padding-left: 50px 0px;
+  margin: 80px 150px;
   line-height: 2;
   width: 80%;
   border-radius: 8px;
@@ -127,6 +140,7 @@ input {
   display: flex;
   flex-shrink: 4;
   justify-content: space-evenly;
+  align-items: center;
 }
 
 .line {
@@ -151,8 +165,8 @@ export default {
   },
   data() {
     return {
+      error:"",
       otherProf:"",
-      disable:"true",
       prof: [
         {id:"instCla" ,label:"Instrumentiste Classique"},
         {id:"instJazz" ,label: "Instrumentiste Jazz"},
@@ -183,6 +197,8 @@ export default {
         person: {
           name: "",
           password: "",
+          dob: "",
+          country:"",
           gender: "",
           prof: [],
           music: "",
@@ -224,12 +240,47 @@ watch: {
               this.person.prof.push(val);
             }
           },
+
           submitForms: function(){
               if (this.otherProf.length !== 0){
                 this.person.prof.push(this.otherProf);
               }
-              console.log("both forms are submitted", this.person)
+              if (this.person.name.length == 0) {
+                  this.error += "Name "}
+              if (this.person.password.length == 0) {
+                  this.error += "- Password "}
+              if (this.person.dob.length == 0) {
+                  this.error += "- Year of birth "}
+              if (this.person.country.length == 0) {
+                  this.error += "- Country "}
+              if (this.person.gender.length == 0) {
+                  this.error += "- Gender "}
+              if (this.person.prof.length == 0) {
+                  this.error += "- Profession(s) "}
+              if (this.person.music.length == 0) {
+                  this.error += "- Musical activity "}
+
+              if (this.error == 0) {this.$router.push('/_lang/indexing')
+                this.$Notice.success({
+                    title: 'Congratulations you signed up',
+                    desc: 'The desc will hide when you set render.',
+                    render: h => {
+                        return h('span', ["You are ready for the experiment"])
+                        }
+                      });
+              }
+              else {
+                this.$Message.error({
+                  content: "you need to fill these fields: " + this.error,
+                  duration: 10,
+                  closable: true})
+                this.error = ""
+              }
+
+              console.log("both forms are submitted",this.error, this.person)
+              // this.$router.push('/_lang/success');
               // document.getElementById("form1").submit();
+
           },
           disableTest: function(disable){
               if (this.disable===true){

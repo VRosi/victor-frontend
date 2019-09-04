@@ -15,7 +15,7 @@ export default {
   name: 'home',
   components: {
     signUpForm,
-    signInForm
+    signInForm,
   }
 }
 </script>

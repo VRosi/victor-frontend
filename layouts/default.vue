@@ -27,7 +27,7 @@ text-align: center;
 color: #2c3e50;
 }
 
-#app h1, h2, #foot, #nav, label, button{
+#app h1, h2, #foot, #nav, label, button, input{
 font-family: 'Asap Condensed', sans-serif;
 }
 

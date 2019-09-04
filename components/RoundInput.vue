@@ -1,5 +1,6 @@
 <template lang="html">
   <div>
+    <!-- <Radio :name="name" v-model="radioButtonValue">{{label}}</Radio> -->
     <input type="radio" :name="name" v-model="radioButtonValue">
     <label> {{label}}</label>
   </div>

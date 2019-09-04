@@ -26,12 +26,14 @@ module.exports = {
   ** Global CSS
   */
   css: [
+    'iview/dist/styles/iview.css'
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '~/plugins/i18n.js' }
+    { src: '~/plugins/i18n.js' },
+    { src: '~/plugins/iview.js', ssr: true }
   ],
 
   /*
@@ -39,8 +41,8 @@ module.exports = {
   */
   generate: {
     routes: [
-      '/en', '/en/index', '/en/about', '/en/indexing',
-      '/fr', '/fr/index', '/fr/about', '/fr/indexing']
+      '/en', '/en/index', '/en/about', '/en/indexing', '/en/success'
+      '/fr', '/fr/index', '/fr/about', '/fr/indexing', '/fr/success']
   },
   buildModules: [
     '@nuxtjs/vuetify'
@@ -78,7 +80,7 @@ module.exports = {
     middleware: 'i18n'   // middleware all pages of the application
   },
   build: {
-    vendor: ['vue-i18n'], // webpack vue-i18n.bundle.js
+    vendor: ['vue-i18n', 'iview'], // webpack vue-i18n.bundle.js
     /*
     ** You can extend webpack config here
     */

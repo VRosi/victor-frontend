@@ -1,5 +1,5 @@
 import Vue from 'vue'
 import iView from 'iview'
-import locale from 'iview/dist/locale/pt-PT' // Change locale, check node_modules/iview/dist/locale
+import locale from 'iview/dist/locale/fr-Fr'
 
 Vue.use(iView, {locale})

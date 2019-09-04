@@ -30,8 +30,9 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins:
-    ['~/plugins/i18n.js'], // webpack plugin,
+  plugins: [
+    { src: '~/plugins/i18n.js' }
+  ],
 
   /*
   ** Nuxt.js dev-modules
@@ -42,7 +43,7 @@ module.exports = {
       '/fr', '/fr/index', '/fr/about', '/fr/indexing']
   },
   buildModules: [
-    '@nuxtjs/vuetify',
+    '@nuxtjs/vuetify'
   ],
   /*
   ** Nuxt.js modules

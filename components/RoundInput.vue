@@ -1,24 +1,37 @@
 <template lang="html">
   <div>
-    <input type="radio" name="gender" :id="gender" :v-model="model">
-    <label :for="gender"> {{label}}</label>
+    <input type="radio" :name="name" v-model="radioButtonValue">
+    <label> {{label}}</label>
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    model: {
-      type: String,
-    },
     label: {
       type: String,
     },
-    gender: {
+    fromParent: {
       type: String,
-      default: ''
     },
+    value: {
+      type: String,
+    },
+    name: {
+      type: String,
+    }
   },
+  computed: {
+        radioButtonValue: {
+            get: function() {
+                return this.value
+            },
+            set: function() {
+                // Communicate the change to parent component so that selectedValue can be updated
+                this.$emit("input", this.fromParent)
+            }
+        }
+    }
 }
 </script>
 

@@ -1,7 +1,7 @@
 <template lang="html">
   <div>
     <div v-for="item in list_arr" :key="item.id">
-        <input type="checkbox" :id="item.id" name="item.id" :v-model="model">
+        <input type="checkbox" name="item.id" value="item.id" @input="change(item.id)">
         <label> {{ item.label }}</label>
     </div>
   </div>
@@ -12,12 +12,13 @@ export default {
   props: {
     list_arr: {
       type: Array,
-      default: ['']
-    },
-    model: {
-      type: String,
-    },
+    }
   },
+    methods: {
+      change(item) {
+        this.$emit("input", item)
+      }
+    }
 }
 
 </script>

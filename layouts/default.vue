@@ -33,13 +33,12 @@ font-family: 'Asap Condensed', sans-serif;
 }
 
 #nav {
-padding: 40px;
+padding: 20px;
 font-size: 1.3rem;
 text-transform: uppercase;
 background: url(../assets/logo-ircam.png) no-repeat;
 background-size: contain;
 margin-bottom: 80px;
-
 }
 
 #nav a {

@@ -20,7 +20,7 @@
 
 <script>
 export default {
-  name: '4Words',
+  name: '',
   props: {
     msg: String,
   },

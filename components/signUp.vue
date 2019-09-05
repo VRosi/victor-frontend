@@ -10,7 +10,7 @@
 
         <div class='container'>
           <div class>
-            <label class="persontitle" for="name"> <b>Nom* : </b> </label><br>
+            <label class="persontitle" for="name"> <b>Identifiant* : </b> </label><br>
             <input type='text' placeholder="Nom" id="name" name="name" v-model="person.name"><br><br>
             <label class="persontitle" for="password"> <b>Mot de passe* : </b> </label><br>
             <input type="password" placeholder="Mot de passe" id="password" v-model="person.password"><br>
@@ -176,21 +176,6 @@ import axios from 'axios'
 
 
 export default {
-  async asyncData(context) {
-    console.log('asyncData');
-    try {
-      axios.post('http://localhost:8000/signup', {
-        name: "random",
-        password: "12345"
-      }).then((res) => {
-        console.log('res',res);
-      }).catch((err) => {
-        console.log('err',err);
-      });
-    } catch (e) {
-      console.log('err',err);
-    }
-  },
   components: {
     RoundInput, checklist
   },
@@ -297,7 +282,7 @@ watch: {
                 console.log('err',err);
               });
             } catch (e) {
-              console.log('err',err);
+              console.log('err',e);
             }
           },
 

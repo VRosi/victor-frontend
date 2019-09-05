@@ -1,14 +1,18 @@
 <template lang="html">
-  <successSign />
+  <div class="">
+    <h1>CONGRATS</h1>
+    <router-link to="/">Back to the home page</router-link>
+  </div>
 </template>
 <script>
 // @ is an alias to /src
-import successSign from '@/components/successSign.vue'
+
 
 export default {
-  name: 'home',
-  components: {
-    successSign
-  },
+  fetch ({ store, redirect }) {
+    if (!store.state.authUser) {
+      return redirect('/')
+    }
+  }
 }
 </script>

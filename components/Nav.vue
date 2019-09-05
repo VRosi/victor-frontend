@@ -20,8 +20,9 @@
           </Input>
         </div><br>
         <div class="buttons">
-          <Button id="submitButton" @click="goSignIn()" name="login">Sign in</Button>
-          <Button id="signupButton" @click="goSignUp()" name="signup">Sign up</Button>
+          <Button @click="goSignIn()" name="login">Log in</Button>
+          <Button @click="goLogOut()" name="logout">Log out</Button>
+          <Button id="signup" @click="goSignUp()" name="signup">Sign up</Button>
         </div>
       </form>
     </div>
@@ -30,6 +31,7 @@
 
 <script>
 import axios from 'axios'
+import Cookie from 'js-cookie'
 
 
 export default {
@@ -43,6 +45,7 @@ data() {
   }
 },
 methods: {
+
           testaxios() {
             console.log('test');
             try {
@@ -84,10 +87,16 @@ methods: {
             else {
               this.$Message.error({
                 content: "you need to fill these fields: " + this.error,
-                duration: 10,
+                duration: 5,
                 closable: true})
               this.error = ""
             }
+            this.name=""
+        },
+        goLogOut (){
+          this.$store.commit('SET_USER', null),
+          Cookie.remove('auth');
+          this.$router.go({path:'/', force: true})
         },
         goSignUp (){
           this.$router.push('/_lang/about')
@@ -135,6 +144,11 @@ methods: {
   flex-direction: row;
   align-items: center;
   }
+
+#signup {
+  background-color: lightblue;
+
+}
 
 /* #submitbutton {
   border-radius: 0px;

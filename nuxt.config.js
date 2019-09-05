@@ -41,7 +41,7 @@ module.exports = {
   */
   generate: {
     routes: [
-      '/en', '/en/index', '/en/about', '/en/indexing', '/en/success'
+      '/en', '/en/index', '/en/about', '/en/indexing', '/en/success',
       '/fr', '/fr/index', '/fr/about', '/fr/indexing', '/fr/success']
   },
   buildModules: [
@@ -51,7 +51,13 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/axios',
   ],
+
+  axios: {
+    // proxyHeaders: false
+    proxy: true
+  },
   /*
   ** vuetify module configuration
   ** https://github.com/nuxt-community/vuetify-module

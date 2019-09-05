@@ -21,6 +21,7 @@
 <style media="screen">
 #app {
 font-family: 'EB Garamond', serif;
+font-size: 1rem;
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
 text-align: center;

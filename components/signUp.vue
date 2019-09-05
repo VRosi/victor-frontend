@@ -10,20 +10,20 @@
 
         <div class='container'>
           <div class>
-            <label for="name"> <b>Nom* : </b> </label><br>
+            <label class="persontitle" for="name"> <b>Nom* : </b> </label><br>
             <input type='text' placeholder="Nom" id="name" name="name" v-model="person.name"><br><br>
-            <label for="password"> <b>Mot de passe* : </b> </label><br>
+            <label class="persontitle" for="password"> <b>Mot de passe* : </b> </label><br>
             <input type="password" placeholder="Mot de passe" id="password" v-model="person.password"><br>
             <!-- <button>show / hide</button> -->
           </div>
           <div>
-            <label><b>Année de naissance* : </b></label><br>
-            <DatePicker type="year" format="yyyy" placeholder="ex : 1992" style="width: 150px" v-model="person.dob"></DatePicker><br><br>
-            <label> <b>Sexe* : </b></label>
+            <label class="persontitle" ><b>Année de naissance* : </b></label><br>
+            <DatePicker type="year" format="yyyy" placeholder="ex : 1992" style="width: 150px" v-model="person.birthyear"></DatePicker><br><br>
+            <label class="persontitle" > <b>Sexe* : </b></label>
             <RoundInput :value="person.gender" @input="inputGender" name ="gender" label="Homme" fromParent="male"/>
             <RoundInput :value="person.gender" @input="inputGender" name ="gender" label="Femme" fromParent="female"/>
             <RoundInput :value="person.gender" @input="inputGender" name ="gender" label="Autre" fromParent="other"/><br>
-            <label for="country"> <b>Pays de résidence* : </b> </label><br>
+            <label class="persontitle" for="country"> <b>Pays de résidence* : </b> </label><br>
             <input type='text' placeholder="Pays" id="country" v-model="person.country"><br>
           </div>
 
@@ -33,45 +33,45 @@
 
       <div class="container">
         <div>
-          <label> <b>Profession* : </b></label>
-            <checklist :list_arr="prof" :value="person.prof" @input="inputProfessions"/>
+          <label class="persontitle"> <b>Profession* : </b></label>
+            <checklist :list_arr="professionalActivity" :value="person.professionalActivity" @input="inputProfessions"/>
             <label> Autre : </label>
-            <input type="text" id="otherCont" name="prof" v-model="otherProf">
+            <input type="text" id="otherCont" name="professionalActivity" v-model="otherProf">
         </div>
 
         <div>
           <div>
-            <label class=""> <b>Avez-vous une activité musicale ? </b></label><br>
-            <RoundInput class="yesno" :value="person.music" @input="inputMusic" name ="yn" label="Oui" fromParent="Yes"/>
-            <RoundInput :value="person.music" @input="inputMusic" name ="yn" label="Non" fromParent="No" />
+            <label class="persontitle"> <b>Avez-vous une activité musicale ? </b></label><br>
+            <RoundInput class="yesno" :value="person.isMusic" @input="inputMusic" name ="yn" label="Oui" fromParent=true />
+            <RoundInput :value="person.isMusic" @input="inputMusic" name ="yn" label="Non" fromParent=false /><br>
           </div>
 
           <div id="musical">
-            <label>Principale discipline musicale : </label>
+            <label class="persontitle">Principale discipline musicale : </label>
             <div class="musDis">
-              <input type="text" id="musEdin" v-model="person.musDis">
-            </div>
-              <label> Formation musicale* : </label>
+              <input type="text" id="musEdin" v-model="person.musicDiscipline">
+            </div><br>
+              <label class="persontitle"> Formation musicale* : </label>
             <div>
-              <RoundInput :value="person.musEd" @input="inputMusEd" name ="educ" :label="musicEd[0].label" :fromParent="musicEd[0].id" />
-              <RoundInput :value="person.musEd" @input="inputMusEd" name ="educ" :label="musicEd[1].label" :fromParent="musicEd[1].id" />
-              <RoundInput :value="person.musEd" @input="inputMusEd" name ="educ" :label="musicEd[2].label" :fromParent="musicEd[2].id" />
-              <RoundInput :value="person.musEd" @input="inputMusEd" name ="educ" :label="musicEd[3].label" :fromParent="musicEd[3].id" />
-            </div>
-            <label> Activité musicale* : </label>
+              <RoundInput :value="person.musicEducation" @input="inputMusEd" name ="educ" :label="musicEducation[0].label" :fromParent="musicEducation[0].id" />
+              <RoundInput :value="person.musicEducation" @input="inputMusEd" name ="educ" :label="musicEducation[1].label" :fromParent="musicEducation[1].id" />
+              <RoundInput :value="person.musicEducation" @input="inputMusEd" name ="educ" :label="musicEducation[2].label" :fromParent="musicEducation[2].id" />
+              <RoundInput :value="person.musicEducation" @input="inputMusEd" name ="educ" :label="musicEducation[3].label" :fromParent="musicEducation[3].id" />
+            </div><br>
+            <label class="persontitle"> Activité musicale* : </label>
             <div>
-              <RoundInput :value="person.musAc" @input="inputMusAc" name ="acti" :label="musicAc[0].label" :fromParent="musicAc[0].id" />
-              <RoundInput :value="person.musAc" @input="inputMusAc" name ="acti" :label="musicAc[1].label" :fromParent="musicAc[1].id" />
-              <RoundInput :value="person.musAc" @input="inputMusAc" name ="acti" :label="musicAc[2].label" :fromParent="musicAc[2].id" />
-              <RoundInput :value="person.musAc" @input="inputMusAc" name ="acti" :label="musicAc[3].label" :fromParent="musicAc[3].id" />
-              <RoundInput :value="person.musAc" @input="inputMusAc" name ="acti" :label="musicAc[4].label" :fromParent="musicAc[4].id" />
-            </div>
+              <RoundInput :value="person.musicActivity" @input="inputMusAc" name ="acti" :label="musicActivity[0].label" :fromParent="musicActivity[0].id" />
+              <RoundInput :value="person.musicActivity" @input="inputMusAc" name ="acti" :label="musicActivity[1].label" :fromParent="musicActivity[1].id" />
+              <RoundInput :value="person.musicActivity" @input="inputMusAc" name ="acti" :label="musicActivity[2].label" :fromParent="musicActivity[2].id" />
+              <RoundInput :value="person.musicActivity" @input="inputMusAc" name ="acti" :label="musicActivity[3].label" :fromParent="musicActivity[3].id" />
+              <RoundInput :value="person.musicActivity" @input="inputMusAc" name ="acti" :label="musicActivity[4].label" :fromParent="musicActivity[4].id" />
+            </div><br>
           </div>
         </div>
       </div>
 
-      <div >
-          <input type="submit" value="Submit" >
+      <div class="submitdiv">
+          <input class="submitbutton" type="submit" value="SUBMIT" >
       </div>
 
 
@@ -124,7 +124,7 @@ input {
 .formy {
   text-align: left;
   box-sizing: content-box;
-  padding-left: 50px 0px;
+  padding: 30px auto;
   margin: 80px 150px;
   line-height: 2;
   width: 80%;
@@ -133,9 +133,9 @@ input {
   box-shadow: 0px 2px 8px #094683;
 }
 
-.prof{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+.persontitle {
+
+  font-size: 1.1rem
 }
 
 .container{
@@ -143,6 +143,18 @@ input {
   flex-shrink: 4;
   justify-content: space-evenly;
   align-items: center;
+}
+.submitdiv{
+  text-align: center;
+}
+.submitbutton {
+  border-radius: 0px;
+  width: 500px;
+  text-align: center;
+  border-color: black 1px solid;
+}
+.submitbutton:hover, .submitbutton:active{
+  background-color: #efefef;
 }
 
 .line {
@@ -160,9 +172,25 @@ input {
 <script>
 import RoundInput from '../components/RoundInput.vue';
 import checklist from '../components/checklist.vue';
+import axios from 'axios'
 
 
 export default {
+  async asyncData(context) {
+    console.log('asyncData');
+    try {
+      axios.post('http://localhost:8000/signup', {
+        name: "random",
+        password: "12345"
+      }).then((res) => {
+        console.log('res',res);
+      }).catch((err) => {
+        console.log('err',err);
+      });
+    } catch (e) {
+      console.log('err',err);
+    }
+  },
   components: {
     RoundInput, checklist
   },
@@ -170,27 +198,27 @@ export default {
     return {
       error:"",
       otherProf:"",
-      prof: [
-        {id:"instCla" ,label:"Instrumentiste Classique"},
-        {id:"instJazz" ,label: "Instrumentiste Jazz"},
+      professionalActivity: [
+        {id:"classicMusic" ,label:"Instrumentiste Classique"},
+        {id:"jazzMusic" ,label: "Instrumentiste Jazz"},
         {id:"composer" ,label: "Compositeur"},
-        {id:"sengineer" ,label: "Ingénieur du son"},
-        {id:"sdesigner" ,label: "Designer sonore"},
+        {id:"soundEngineer" ,label: "Ingénieur du son"},
+        {id:"soundDesigner" ,label: "Designer sonore"},
         {id:"conductor" ,label: "Chef(fe) d'orchestre"},
-        {id:"musico" ,label: "Musicologue"},
+        {id:"musicologist" ,label: "Musicologue"},
         {id:"acoustician" ,label: "Acousticien(ne)"},
-        {id:"teachA" ,label: "Professeur Orchestration/Analyse..."},
-        {id:"teachB" ,label: "Professeur création sonore"},
+        {id:"teacherA" ,label: "Professeur Orchestration/Analyse..."},
+        {id:"teacherB" ,label: "Professeur création sonore"},
         {id:"RIM" ,label: "RIM"},
       ],
 
-      musicEd: [
+      musicEducation: [
         {id:"None" ,label:"Aucune formation"},
         {id:"amator" ,label: "Formation amateur"},
         {id:"semiPro" ,label: "Formation semi-pro"},
         {id:"pro" ,label: "Formation professionnelle (CNSM/Pole)"},
       ],
-      musicAc: [
+      musicActivity: [
         {id:"None" ,label:"Aucune activité"},
         {id:"amatorOc" ,label: "Amateur occasionnelle"},
         {id:"amatorFre" ,label: "Amateur fréquente"},
@@ -200,21 +228,21 @@ export default {
         person: {
           name: "",
           password: "",
-          dob: "",
+          birthyear: "",
           country:"",
           gender: "",
-          prof: [],
-          music: "",
-          musDis: "",
-          musEd: "",
-          musAc: "",
+          professionalActivity: [],
+          isMusic: "",
+          musicDiscipline: "",
+          musicEducation: "",
+          musicActivity: "",
                 }
           }
         },
 watch: {
         Disabling: function(val) {
             console.log("coucou")
-            if (this.person.music==="yes") {
+            if (this.person.isMusic) {
               console.log("yes");
               this.musical.disable=true;
               this.musical.color="black";}
@@ -227,43 +255,74 @@ watch: {
             this.person.gender = val;
           },
           inputMusic(val) {
-            this.person.music = val;
+            this.person.isMusic = val;
           },
           inputMusEd(val) {
-            this.person.musEd = val;
+            this.person.musicEducation = val;
           },
           inputMusAc(val) {
-            this.person.musAc = val;
+            this.person.musicActivity = val;
           },
           inputProfessions(val) {
-            var index = this.person.prof.indexOf(val)
+            var index = this.person.professionalActivity.indexOf(val)
             if (index > -1) {
-              this.person.prof.splice(index,1);
+              this.person.professionalActivity.splice(index,1);
             } else {
-              this.person.prof.push(val);
+              this.person.professionalActivity.push(val);
             }
           },
 
-          submitForms: function(){
+          testaxios() {
+            console.log('test');
+            try {
+              axios.post('http://localhost:8000/signup', {
+                name: this.person.name,
+                password: this.person.password,
+                birthyear: new Date(this.person.birthyear).getFullYear(),
+                country: this.person.country,
+                gender: this.person.gender,
+                professionalActivity: this.person.professionalActivity,
+                isMusic: this.person.isMusic,
+                musicDiscipline: this.person.musicDiscipline,
+                musicEducation: this.person.musicEducation,
+                musicActivity: this.person.musicActivity,
+              }, {
+                headers: {
+                  'Content-Type':'application/json',
+                  Accept: 'application/json'
+                }
+              }).then((res) => {
+                console.log('res',res);
+              }).catch((err) => {
+                console.log('err',err);
+              });
+            } catch (e) {
+              console.log('err',err);
+            }
+          },
+
+          submitForms() {
               if (this.otherProf.length !== 0){
-                this.person.prof.push(this.otherProf);
+                this.person.professionalActivity.push(this.otherProf);
               }
               if (this.person.name.length == 0) {
                   this.error += "Name "}
               if (this.person.password.length == 0) {
                   this.error += "- Password "}
-              if (this.person.dob.length == 0) {
+              if (this.person.birthyear.length == 0) {
                   this.error += "- Year of birth "}
               if (this.person.country.length == 0) {
                   this.error += "- Country "}
               if (this.person.gender.length == 0) {
                   this.error += "- Gender "}
-              if (this.person.prof.length == 0) {
+              if (this.person.professionalActivity.length == 0) {
                   this.error += "- Profession(s) "}
-              if (this.person.music.length == 0) {
+              if (this.person.isMusic.length == 0) {
                   this.error += "- Musical activity "}
 
-              if (this.error == 0) {this.$router.push('/_lang/indexing')
+              if (this.error == 0) {
+                this.testaxios();
+                this.$router.push('/_lang/indexing');
                 this.$Notice.success({
                     title: 'Congratulations you signed up',
                     desc: 'The desc will hide when you set render.',
@@ -285,7 +344,7 @@ watch: {
               // document.getElementById("form1").submit();
 
           },
-          disableTest: function(disable){
+          disableTest (disable) {
               if (this.disable===true){
                   div.disabled = true;
                 }

@@ -41,8 +41,8 @@ module.exports = {
   */
   generate: {
     routes: [
-      '/en', '/en/index', '/en/about', '/en/indexing', '/en/success',
-      '/fr', '/fr/index', '/fr/about', '/fr/indexing', '/fr/success']
+      '/en', '/en/index', '/en/signup', '/en/indexing', '/en/success',
+      '/fr', '/fr/index', '/fr/signup', '/fr/indexing', '/fr/success']
   },
   buildModules: [
     '@nuxtjs/vuetify'
@@ -87,11 +87,19 @@ module.exports = {
     middleware: ['i18n', 'auth'],  // middleware all pages of the application
   },
   build: {
-    vendor: ['vue-i18n', 'iview'], // webpack vue-i18n.bundle.js
+    vendor: ['vue-i18n', 'iview'],
+     // webpack vue-i18n.bundle.js
     /*
     ** You can extend webpack config here
     */
     extend (config, ctx) {
+      config.module.rules.push({
+        test: /\.(ogg|mp3|wav|mpe?g)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]',
+        },
+      })
     }
   }
 }

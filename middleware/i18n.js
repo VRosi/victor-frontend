@@ -9,10 +9,10 @@ export default function ({
     return;
   } // if url does not have language, redirect to english
   else if (!params.lang) {
-    return redirect('/en'+route.fullPath);
+    return redirect('/fr'+route.fullPath);
   }
   // based on directory structure _lang/xxxx, en/about has params.lang as "en"
-  const locale = params.lang || 'en';
+  const locale = params.lang || 'fr';
   store.commit('SET_LANG', locale); // set store
   app.i18n.locale = store.state.locale;
 }

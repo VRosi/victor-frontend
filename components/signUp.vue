@@ -1,6 +1,6 @@
 <template>
 <div class="signup">
-    <h1>S'inscrire</h1>
+    <h1>SIGN UP</h1>
       <p>Afin d'observer un lien entre vos réponses et votre profil,
         voici un rapide formulaire à remplir avec vos informations <br>(nothing personal)</p>
     <div class="formy">
@@ -82,91 +82,6 @@
 
 </div>
 </template>
-
----------------------------------------------------------------------------------------------------------------------
-
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-
-input {
-  border-radius: 4px;
-  border: 1px solid #efefef;
-  padding: 5px;
-  font-size: 1em;
-  width: 200px;
-
-}
-
-
-.signup{
-  background: linear-gradient(#7CCAB2, #094683);
-  padding: 30px;
-}
-
-.yesno {
-  float: left;
-  margin-right: 2rem;
-}
-
-.formy {
-  text-align: left;
-  box-sizing: content-box;
-  padding: 30px auto;
-  margin: 80px 150px;
-  line-height: 2;
-  width: 80%;
-  border-radius: 8px;
-  background-color: white;
-  box-shadow: 0px 2px 8px #094683;
-}
-
-.persontitle {
-
-  font-size: 1.1rem
-}
-
-.container{
-  display: flex;
-  flex-shrink: 4;
-  justify-content: space-evenly;
-  align-items: center;
-}
-.submitdiv{
-  text-align: center;
-}
-.submitbutton {
-  border-radius: 0px;
-  width: 500px;
-  text-align: center;
-  border-color: black 1px solid;
-}
-.submitbutton:hover, .submitbutton:active{
-  background-color: #efefef;
-}
-
-.line {
-  border-bottom-color: #efefef;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  margin: 0 150px 10px;
-  padding: 0 0 10px;
-}
-
-</style>
-
 ---------------------------------------------------------------------------------------------------------------------
 
 <script>
@@ -278,6 +193,7 @@ watch: {
                 }
               }).then((res) => {
                 console.log('res',res);
+                this.$store.commit('SET_USER', res.data.user_id)
               }).catch((err) => {
                 console.log('err',err);
               });
@@ -324,7 +240,7 @@ watch: {
                 this.error = ""
               }
 
-              console.log("both forms are submitted",this.error, this.person)
+              // console.log("both forms are submitted",this.error, this.person)
               // this.$router.push('/_lang/success');
               // document.getElementById("form1").submit();
 
@@ -343,3 +259,87 @@ watch: {
 
 
 </script>
+
+---------------------------------------------------------------------------------------------------------------------
+
+<style scoped>
+h3 {
+  margin: 40px 0 0;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: block;
+  margin: 0 10px;
+}
+a {
+  color: #42b983;
+}
+
+input {
+  border-radius: 4px;
+  border: 1px solid #efefef;
+  padding: 5px;
+  font-size: 1em;
+  width: 200px;
+
+}
+
+
+.signup{
+  background: linear-gradient(#7CCAB2, #094683);
+  padding: 30px;
+}
+
+.yesno {
+  float: left;
+  margin-right: 2rem;
+}
+
+.formy {
+  text-align: left;
+  box-sizing: content-box;
+  padding: 30px auto;
+  margin: 80px 150px;
+  line-height: 2;
+  width: 80%;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0px 2px 8px #094683;
+}
+
+.persontitle {
+
+  font-size: 1.1rem
+}
+
+.container{
+  display: flex;
+  flex-shrink: 4;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.submitdiv{
+  text-align: center;
+}
+.submitbutton {
+  border-radius: 0px;
+  width: 500px;
+  text-align: center;
+  border-color: black 1px solid;
+}
+.submitbutton:hover, .submitbutton:active{
+  background-color: #efefef;
+}
+
+.line {
+  border-bottom-color: #efefef;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  margin: 0 150px 10px;
+  padding: 0 0 10px;
+}
+
+</style>

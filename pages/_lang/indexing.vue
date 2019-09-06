@@ -2,6 +2,7 @@
   <div class="home">
 
     <IndexingMenu/>
+
   </div>
 </template>
 
@@ -12,7 +13,12 @@ import IndexingMenu from '@/components/Words.vue'
 export default {
   name: 'home',
   components: {
-    IndexingMenu
+    IndexingMenu,
+  },
+  fetch ({ store, redirect }) {
+    if (!store.state.authUser) {
+      return redirect('/')
+    }
   }
 }
 </script>

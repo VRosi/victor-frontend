@@ -8,7 +8,7 @@ Vue.use(Vuex)
 
 export const state = () => ({
   locales: ['en', 'fr'],
-  locale: 'en',
+  locale: 'fr',
   authUser: null
 
 })

@@ -4,8 +4,9 @@ import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
 const _254648ce = () => interopDefault(import('../pages/_lang/index.vue' /* webpackChunkName: "pages/_lang/index" */))
-const _058e6e09 = () => interopDefault(import('../pages/_lang/about.vue' /* webpackChunkName: "pages/_lang/about" */))
+const _2b7b8031 = () => interopDefault(import('../pages/_lang/experiment.vue' /* webpackChunkName: "pages/_lang/experiment" */))
 const _5ec280f8 = () => interopDefault(import('../pages/_lang/indexing.vue' /* webpackChunkName: "pages/_lang/indexing" */))
+const _3b297dcc = () => interopDefault(import('../pages/_lang/signup.vue' /* webpackChunkName: "pages/_lang/signup" */))
 const _dfc15302 = () => interopDefault(import('../pages/_lang/success.vue' /* webpackChunkName: "pages/_lang/success" */))
 
 Vue.use(Router)
@@ -22,13 +23,17 @@ export const routerOptions = {
       component: _254648ce,
       name: "lang"
     }, {
-      path: "/:lang/about",
-      component: _058e6e09,
-      name: "lang-about"
+      path: "/:lang/experiment",
+      component: _2b7b8031,
+      name: "lang-experiment"
     }, {
       path: "/:lang/indexing",
       component: _5ec280f8,
       name: "lang-indexing"
+    }, {
+      path: "/:lang/signup",
+      component: _3b297dcc,
+      name: "lang-signup"
     }, {
       path: "/:lang/success",
       component: _dfc15302,

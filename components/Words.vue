@@ -11,21 +11,23 @@
 
 </p>
 <!-- <nuxt-link to="/displaySound">Brillant</nuxt-link><br> -->
-<button @click="buttonWords()" type="button" name="Brillant">Brillant</button><br>
-<button type="button" name="Chaud">Chaud</button><br>
-<button type="button" name="Rond">Rond</button><br>
-<button type="button" name="Rugueux">Rugueux</button><br>
+<button @click="buttonWords(word_list[0])" type="button" >Brillant</button><br>
+<button @click="buttonWords(word_list[1])" type="button" name="Chaud">Chaud</button><br>
+<button @click="buttonWords(word_list[2])" type="button" name="Rond">Rond</button><br>
+<button @click="buttonWords(word_list[3])" type="button" name="Rugueux">Rugueux</button><br>
   </div>
 </template>
 
 <script>
 export default {
   name: '',
+  word: "",
   props: {
     msg: String,
   },
   data() {
     return {
+      word_list:["bright", "warm", "round", "rough"],
       words: ['Chaud', 'Rond', 'Brillant', 'Rugueux'],
       urlMax: "https://www.researchgate.net/publication/320018306_Speaking_about_sounds_A_tool_for_communication_on_sound_features",
 
@@ -36,6 +38,11 @@ export default {
     //   window.open("About.vue", "_blank");
     //   title=
     // },
+    buttonWords(word) {
+      this.word= word;
+      this.$router.push(`/_lang/experiment?word=${this.word}`);
+    },
+
     randomTitle(a) {
       var j, x, i, words = '';
     for (i = a.length - 1; i > 0; i--) {
@@ -49,8 +56,8 @@ export default {
 
     }
     return words;
-}
-  },
+  }
+},
 }
 </script>
 

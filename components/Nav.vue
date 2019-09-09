@@ -1,12 +1,13 @@
 <template lang="html">
   <div id="nav">
 
-    <div>
-    </div>
 
     <div class="links">
-      <nuxt-link to='/'>{{$t('links.home')}}</nuxt-link> |
-      <nuxt-link to='/_lang/indexing'>{{$t('links.indexing')}}</nuxt-link>
+      <nuxt-link class="langItem" v-if="$i18n.locale === 'en'" to="/fr">Fr</nuxt-link>
+      <nuxt-link class="langItem" v-if="$i18n.locale === 'fr'" to="/en">En</nuxt-link> |
+      <nuxt-link :to="'/' + $i18n.locale + '/'">{{$t('links.home')}}</nuxt-link> |
+      <nuxt-link id="signup" :to="'/' + $i18n.locale + '/signup'">{{$t('links.signup')}}</nuxt-link> |
+      <nuxt-link :to="'/' + $i18n.locale + '/indexing'">{{$t('links.indexing')}}</nuxt-link>
       <!-- <nuxt-link to='/_lang/success'>test</nuxt-link> -->
     </div>
 
@@ -51,13 +52,8 @@ export default {
   /* flex-direction: row; */
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0px 2px 3px grey
-  }
+}
 
-  .links{
-    text-align: center;
-    margin: auto;
 
-  }
 
 </style>

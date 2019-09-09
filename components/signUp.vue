@@ -289,7 +289,7 @@ input {
 
 
 .signup{
-  background: linear-gradient(#7CCAB2, #094683);
+  /* background: linear-gradient(#F5F0EB, #094683); */
   padding: 30px;
 }
 
@@ -307,7 +307,7 @@ input {
   width: 80%;
   border-radius: 8px;
   background-color: white;
-  box-shadow: 0px 2px 8px #094683;
+  box-shadow: 0px 2px 4px black;
 }
 
 .persontitle {

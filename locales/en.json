@@ -1,15 +1,16 @@
 {
   "links": {
-    "home": "home",
-    "indexing": "indexing"
+    "home": ".home",
+    "indexing": ".indexing",
+    "signup": ".signup"
   },
   "index": {
-    "title": "SEMANTIC CARACTERISATION OF SOUND TIMBRE",
+    "title": "Semantic caracterisation of sound timbre",
     "introduction1": "Sound timbre is the feature that allow to make a distinction between two sounds of same loudness and same pitch. Sound timbre has multiple dimensions often used to describe sounds.",
     "introduction2": "Parler du timbre est une activité à laquelle se livre de nombreux professionnels du son allant du chef(fe) d'orchestre au designer sonore. En fonction de leur interlocuteur et de leurs connaissances, ils se doivent d'adapter leur vocabulaire afin de pouvoir communiquer efficacement autour du son lors d'un processus de création sonore (e.g. répétion d'ensemble, séance de mixage, cours d'orchestration...).",
     "introduction3": "Malheureusemnt certains termes de ce vocabulaire ne sont pas tous explicites, malgré une utilisation courante. Cette étude a pour objectif d'étudier le sens de certains termes et de décrypter les caractéristiques acoustiques associées."
   },
-  
+
   "indexing": {
     "title": "À propos",
     "introduction": "..."
@@ -17,5 +18,9 @@
   "experiment": {
     "title": "À propos",
     "introduction": "..."
+  },
+  "Nav": {
+    "login": "Log in",
+    "logout": "Log out"
   }
 }

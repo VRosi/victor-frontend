@@ -2,7 +2,7 @@
   <div >
     <h1 class="words">{{ randomTitle(words)}}</h1>
 <p>
-  Ces 4 termes utilisés pour décrire le timbre sont tirés d'une liste de termes les plus utlisés pour décrire le timbre, extraite d'un lexique actuellement en developpement à l'IRCAM.
+  Ces 4 termes utilisés pour décrire le timbre sont tirés d'une liste de termes les plus utilisés pour décrire le timbre, extraite d'un lexique actuellement en developpement à l'IRCAM.
   Ce lexique est <a :href="urlMax" target="_blank">
   le fruit du travail de Maxime Carron</a> dont l'objectif était de répertorier et étudier l'utilisation d'un vocabulaire du son au sein d'une communauté de professionnels du son.
   La raison du choix de ces quatres terme se doit pour l'instant de rester tacite afin de ne pas biaiser vos résultats.
@@ -10,11 +10,12 @@
   Ils n'est pas non plus nécessaire d'essayer de les mettre en correspondance si cela n'est pas votre sensation (e.g. : brillant/rugueux ou rond/chaud)
 
 </p>
-<!-- <nuxt-link to="/displaySound">Brillant</nuxt-link><br> -->
-<button @click="buttonWords(word_list[0])" type="button" >Brillant</button><br>
-<button @click="buttonWords(word_list[1])" type="button" name="Chaud">Chaud</button><br>
-<button @click="buttonWords(word_list[2])" type="button" name="Rond">Rond</button><br>
-<button @click="buttonWords(word_list[3])" type="button" name="Rugueux">Rugueux</button><br>
+<div class="posButton">
+  <button @click="buttonWords(word_list[0])" type="button" >Brillant</button><br>
+  <button @click="buttonWords(word_list[1])" type="button" name="Chaud">Chaud</button><br>
+  <button @click="buttonWords(word_list[2])" type="button" name="Rond">Rond</button><br>
+  <button @click="buttonWords(word_list[3])" type="button" name="Rugueux">Rugueux</button><br>
+</div>
   </div>
 </template>
 
@@ -123,45 +124,21 @@ p {
       }
 }
 
+
 button {
-  margin: 25px;
-  padding: 5px;
-  width: 120px;
-  border-radius: 4px;
-  text-align: center;
-  font-size: 25px;
-  border-width: medium;
-  color: #E34A60;
-  border-color: #E34A60;
-  background-color: transparent;
-  filter: drop-shadow(darkgrey 3px 3px 2px);
-  /* text-shadow: darkgrey 3px 3px 3px;
-  box-shadow: darkgrey 3px 3px 3px; */
-  transition: 0.3s;
+  padding: 10px 20px;
+  width: 150px;
+  margin: 20px;
+  font-size: 1.5rem;
 }
 
-button:focus {outline: 0;}
-button:hover {
-  background-color: #E34A60;
-  text-align: center;
-  color: white;
-  text-shadow: #E34A60 0px 0px ;
-  border-color: #E34A60;
-  border-radius: 6px;
-  filter: drop-shadow(white 3px 3px 2px);
 
-}
-button:active {
-  background-color: #E34A60;
-  text-align:center;
-  color: white;
-  border: 0;
-  text-shadow: #E34A60 0px 0px ;
-  box-shadow: inset black 0px 0px 5px;
-  border-color: white;
-  border-radius: 6px;
-  outline: 0;
 
+.posButton {
+  margin: 20px 150px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 a {

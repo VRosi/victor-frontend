@@ -16,8 +16,10 @@ export default {
     IndexingMenu,
   },
   fetch ({ store, redirect }) {
+    // console.log(this.$store.state.locale)
     if (!store.state.authUser) {
-      return redirect('/')
+      // this.$Message.error('Identifiant ou mot de passe incorrect')
+      // return redirect('/' + this.$store.state.locale)
     }
   }
 }

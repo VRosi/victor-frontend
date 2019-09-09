@@ -1,19 +1,20 @@
 <template lang="html">
   <div class="note">
-    <div  class="soundPlayer">
+    <div class="soundPlayer" v-if="!this.disabling">
       <figure>
-        <audio id='audioSample' :src="require('@/assets/sound_test/Violin.wav')" controls></audio>
+          <audio id='audioSample' :src="url" controls type="audio/wav"></audio>
       </figure>
     </div>
     <div>
-      <b>not {{word}} </b><input class="slider"
+      not {{word}}
+      <input :disabled="this.disabling" class="slider"
              type="range"
              min="0"
              max="100"
              v-model="value"
              @input="change"
-             ><b> {{word}}</b>
-      <p>{{value}}</p>
+             > {{word}}
+      <!-- <p>{{value}}</p> -->
     </div>
   </div>
 </template>
@@ -25,12 +26,22 @@ export default {
       type: String,
       default: ''
     },
-
+    sound: {
+      type: Object
+    },
+    disabling: {
+      type: Boolean
+    }
   },
   data() {
     return {
       value: '50',
-      sound: '@/assets/sound_test/Violin.wav'
+    }
+  },
+  computed: {
+    url() {
+      console.log('url', this.sound, this.sound.url);
+      return this.sound.url
     }
   },
   methods: {
@@ -45,9 +56,9 @@ export default {
 <style lang="css" scoped>
 .note{
   padding: 20px;
-  background-color: #efefef;
-  border: 1px lightgrey solid;
-  box-shadow: 3px 3px 3px lightgrey;
+  border-radius: 4px;
+  background-color: #FFFFFF ;
+  box-shadow: 0px 0px 8px lightgrey;
   margin: auto;
   margin-bottom: 20px;
   float: left;
@@ -62,7 +73,7 @@ export default {
     appearance: none;
     height: 15px; /* Specified height */
     width: 200px;
-    background: #d3d3d3; /* Grey background */
+    background: #F5F0EB; /* Grey background */
     outline: none; /* Remove outline */
     opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
     -webkit-transition: .2s; /* 0.2 seconds transition on hover */
@@ -72,6 +83,10 @@ export default {
 /* Mouse-over effects */
 .slider:hover {
     opacity: 1; /* Fully shown on mouse-over */
+}
+
+.slider:disabled {
+    background-color: #efefef; /* Fully shown on mouse-over */
 }
 
 /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */

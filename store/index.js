@@ -21,6 +21,6 @@ export const mutations = {
   SET_USER(state, user) {
       if (user) Cookie.set('auth', user, { expires: 1 })
       state.authUser = user;
-      console.log(user)
+      //console.log(user)
     }
 }

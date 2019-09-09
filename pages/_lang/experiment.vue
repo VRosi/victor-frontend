@@ -1,11 +1,25 @@
 <template lang="html">
-  <frame :word="word"/>
+  <frame :word="word" :soundList="soundList"/>
 </template>
 
 <script>
+import axios from 'axios'
 import frame from "@/components/exFrame.vue"
 
 export default {
+  async asyncData () {
+      const result = await axios.get('http://localhost:8000/sounds', {
+        headers: {
+          'Content-Type':'application/json',
+          Accept: 'application/json'
+        }
+      });
+      var soundList = result.data
+      console.log('soundList',soundList);
+      return {
+        soundList
+      }
+  },
   components: {
     frame
   },

@@ -8,7 +8,7 @@
     "title": "Caractérisation sémantique du timbre sonore",
     "introduction1": "Le timbre est la caractéristique sonore qui permet de différencier deux sons de même intensité et de même hauteur. C'est une grandeur au multiples dimensions beaucoup utilisées pour décrire les sons.",
     "introduction2": "Parler du timbre est une activité à laquelle se livre de nombreux professionnels du son allant du chef(fe) d'orchestre au designer sonore. En fonction de leur interlocuteur et de leurs connaissances, ils se doivent d'adapter leur vocabulaire afin de pouvoir communiquer efficacement autour du son lors d'un processus de création sonore (e.g. répétion d'ensemble, séance de mixage, cours d'orchestration...).",
-    "introduction3": "Malheureusemnt certains termes de ce vocabulaire ne sont pas tous explicites, malgré une utilisation courante. Cette étude a pour objectif d'étudier le sens de certains termes et de décrypter les caractéristiques acoustiques associées."
+    "introduction3": "Malheureusemnt certains termes de ce vocabulaire ne sont pas tous explicites, malgré une utilisation courante. Cette recherche a pour objectif d'étudier le sens de certains termes et de décrypter les caractéristiques acoustiques associées."
   },
 
   "indexing": {
@@ -20,7 +20,15 @@
     "introduction": "..."
   },
   "Nav": {
-    "login": "Connection",
-    "logout": "Déconnection"
+    "login": "Connexion",
+    "username": "Identifiant",
+    "password": "Mot de passe",
+    "logout": "Déconnexion"
+  },
+  "signup": {
+    "title":"Inscription"
+  },
+  "footer": {
+    "team": "Equipe perception et design sonore"
   }
 }

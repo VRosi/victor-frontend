@@ -14,7 +14,7 @@
       components: {
         Nav,
         Footer
-      }
+      },
     }
 </script>
 
@@ -50,8 +50,12 @@ padding: 20px;
 font-size: 1.5rem;
 text-transform: uppercase;
 line-height: 0.8;
-margin-left: 10px;
+margin-left: 20px;
 margin-bottom: 50px;
+display: flex;
+/* flex-direction: row; */
+justify-content: space-between;
+align-items: center;
 }
 
 #nav a {
@@ -119,6 +123,7 @@ button:hover {
   border-radius: 4px;
   border: 1px solid black;
   padding: 10px;
+  /* filter: drop-shadow(0px 5px 5px)  */
 }
 
 </style>

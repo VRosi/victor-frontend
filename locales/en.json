@@ -7,10 +7,9 @@
   "index": {
     "title": "Semantic caracterisation of sound timbre",
     "introduction1": "Sound timbre is the feature that allow to make a distinction between two sounds of same loudness and same pitch. Sound timbre has multiple dimensions often used to describe sounds.",
-    "introduction2": "Parler du timbre est une activité à laquelle se livre de nombreux professionnels du son allant du chef(fe) d'orchestre au designer sonore. En fonction de leur interlocuteur et de leurs connaissances, ils se doivent d'adapter leur vocabulaire afin de pouvoir communiquer efficacement autour du son lors d'un processus de création sonore (e.g. répétion d'ensemble, séance de mixage, cours d'orchestration...).",
-    "introduction3": "Malheureusemnt certains termes de ce vocabulaire ne sont pas tous explicites, malgré une utilisation courante. Cette étude a pour objectif d'étudier le sens de certains termes et de décrypter les caractéristiques acoustiques associées."
+    "introduction2": "Speaking about timbre is an activity that share numerous professionals, from the conductor to the sound designer. They mus adapt their vocabulary depending on who their talking to and what kind of knowledge they got. Hence in the case of a creative process (rehearsal, sound design project, mixing session...), things can get blurry sometimes",
+    "introduction3": "Unfortunately, some words from the usual lexicon aren't always explicits, in spite of a frequent use. This survey aims to study the meaning of certain terms, and to unravel the related acoustic features."
   },
-
   "indexing": {
     "title": "À propos",
     "introduction": "..."
@@ -21,6 +20,14 @@
   },
   "Nav": {
     "login": "Log in",
+    "username": "Username",
+    "password": "Password",
     "logout": "Log out"
+  },
+  "signup": {
+    "title":"Sign up"
+  },
+  "footer": {
+    "team": "Perception and sound design group"
   }
 }

@@ -47,13 +47,6 @@ export default {
 
 <style lang="css" scoped>
 
-#nav {
-  display: flex;
-  /* flex-direction: row; */
-  justify-content: space-between;
-  align-items: center;
-}
-
 
 
 </style>

@@ -3,15 +3,15 @@
     <form>
       <div class="idPs">
         <Icon type="ios-person-outline" slot="prepend"></Icon>
-        <input type="text" placeholder="Username" v-model="person.name"
+        <input type="text" :placeholder="$t('Nav.username')" v-model="person.name"
                 onfocus="this.placeholder = ''"
-                onblur="this.placeholder = 'Username'">
+                onblur="this.placeholder = '$t('Nav.username')'">
 
         </input>
         <Icon type="ios-lock-outline" slot="prepend"></Icon>
-        <input type="password" placeholder="Mot de passe" v-model="person.password"
+        <input type="password" :placeholder="$t('Nav.password')" v-model="person.password"
               onfocus="this.placeholder = ''"
-              onblur="this.placeholder = 'Mot de passe'">
+              onblur="this.placeholder = '$t('Nav.password')'">
 
       </input>
       </div><br>
@@ -26,6 +26,10 @@
 <script>
 import axios from 'axios'
 import Cookie from 'js-cookie'
+
+
+
+
 
 
 

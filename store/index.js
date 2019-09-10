@@ -10,8 +10,12 @@ export const state = () => ({
   locales: ['en', 'fr'],
   locale: 'fr',
   authUser: null
-
 })
+
+export const getters = {
+  getMyState: state => state.authUser
+}
+
 export const mutations = {
   SET_LANG(state, locale) {
     if (state.locales.indexOf(locale) !== -1) {
@@ -21,6 +25,7 @@ export const mutations = {
   SET_USER(state, user) {
       if (user) Cookie.set('auth', user, { expires: 1 })
       state.authUser = user;
+      // state.disco = true;
       //console.log(user)
-    }
+  },
 }

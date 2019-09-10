@@ -1,6 +1,6 @@
 <template>
 <div class="signup">
-    <h1>SIGN UP</h1>
+    <h1>{{$t('signup.title')}}</h1>
       <p>Afin d'observer un lien entre vos réponses et votre profil,
         voici un rapide formulaire à remplir avec vos informations <br>(nothing personal)</p>
     <div class="formy">

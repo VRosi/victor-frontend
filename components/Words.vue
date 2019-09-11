@@ -1,20 +1,24 @@
 <template>
   <div >
-    <h1 class="words">{{ randomTitle(words)}}</h1>
+    <h1 class="words">{{ randomTitle(word_list)}}</h1>
 <p>
-  Ces 4 termes utilisés pour décrire le timbre sont tirés d'une liste de termes les plus utilisés pour décrire le timbre, extraite d'un lexique actuellement en developpement à l'IRCAM.
-  Ce lexique est <a :href="urlMax" target="_blank">
-  le fruit du travail de Maxime Carron</a> dont l'objectif était de répertorier et étudier l'utilisation d'un vocabulaire du son au sein d'une communauté de professionnels du son.
-  La raison du choix de ces quatres terme se doit pour l'instant de rester tacite afin de ne pas biaiser vos résultats.
-  Mais sachez juste qu'ils n'ont pas voations à représenter l'ensemble des dimensions du timbre.
-  Ils n'est pas non plus nécessaire d'essayer de les mettre en correspondance si cela n'est pas votre sensation (e.g. : brillant/rugueux ou rond/chaud)
-
+  Ces 4 termes font partis des termes les plus frequemment utilisés pour décrire le timbre sonore.
+  Ils sont tirés d'un lexique sonore, <a :href="urlMax" target="_blank">
+  fruit du travail de Maxime Carron</a>.
+  Sachez que ces mots n'ont pas vocations à représenter l'ensemble des dimensions du timbre.
 </p>
+
+<h3>Avant de commencer, veuillez vous assurer que vous êtes dans un lieu calme avec un bon système son
+   (de préférence un casque audio).  Profitez de l'extrait de son ci-dessous pour régler le volume.
+</h3>
+
+
+<h3>Cliquez sur le terme à étudier : </h3>
 <div class="posButton">
-  <button @click="buttonWords(word_list[0])" type="button" >Brillant</button><br>
-  <button @click="buttonWords(word_list[1])" type="button" name="Chaud">Chaud</button><br>
-  <button @click="buttonWords(word_list[2])" type="button" name="Rond">Rond</button><br>
-  <button @click="buttonWords(word_list[3])" type="button" name="Rugueux">Rugueux</button><br>
+  <button @click="buttonWords(word_list[0])" type="button" >{{word_list[0]}}</button><br>
+  <button @click="buttonWords(word_list[1])" type="button" name="Chaud">{{word_list[1]}}</button><br>
+  <button @click="buttonWords(word_list[2])" type="button" name="Rond">{{word_list[2]}}</button><br>
+  <button @click="buttonWords(word_list[3])" type="button" name="Rugueux">{{word_list[3]}}</button><br>
 </div>
   </div>
 </template>
@@ -28,8 +32,8 @@ export default {
   },
   data() {
     return {
-      word_list:["bright", "warm", "round", "rough"],
-      words: ['Chaud', 'Rond', 'Brillant', 'Rugueux'],
+      url: "./sound-test/Violin.wav",
+      word_list:[this.$t('words.bright'), this.$t('words.warm'), this.$t('words.round'), this.$t('words.rough')],
       urlMax: "https://www.researchgate.net/publication/320018306_Speaking_about_sounds_A_tool_for_communication_on_sound_features",
 
     }
@@ -79,52 +83,10 @@ a {
   color: #42b983;
 }
 
-p {
+p, h3 {
   margin: 10px 200px;
   padding: 40px;
 }
-
-.words{
-  margin-top: 25px;
-      animation: fadein 2s;
-      -moz-animation: fadein 2s; /* Firefox */
-      -webkit-animation: fadein 2s; /* Safari and Chrome */
-      -o-animation: fadein 2s; /* Opera */
-  }
-  @keyframes fadein {
-      from {
-          opacity:0;
-      }
-      to {
-          opacity:1;
-      }
-  }
-  @-moz-keyframes fadein { /* Firefox */
-      from {
-          opacity:0;
-      }
-      to {
-          opacity:1;
-      }
-  }
-  @-webkit-keyframes fadein { /* Safari and Chrome */
-      from {
-          opacity:0;
-      }
-      to {
-          opacity:1;
-      }
-  }
-  @-o-keyframes fadein { /* Opera */
-      from {
-          opacity:0;
-      }
-      to {
-          opacity: 1;
-      }
-}
-
-
 button {
   padding: 10px 20px;
   width: 150px;
@@ -135,7 +97,7 @@ button {
 
 
 .posButton {
-  margin: 20px 150px;
+  margin: 20px 200px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;

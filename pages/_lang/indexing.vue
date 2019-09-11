@@ -18,8 +18,8 @@ export default {
   fetch ({ store, redirect }) {
     // console.log(this.$store.state.locale)
     if (!store.state.authUser) {
-      //this.$Message.error('Identifiant ou mot de passe incorrect')
-      return redirect('/')
+      this.$Message.error({content:'Identifiant ou mot de passe incorrect'})
+      return redirect('/' + this.$store.state.locale + '/')
     }
   }
 }

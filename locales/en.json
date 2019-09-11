@@ -4,6 +4,17 @@
     "indexing": ".indexing",
     "signup": ".signup"
   },
+  "words": {
+    "presentation1":"",
+    "bright": "Bright",
+    "warm": "Warm",
+    "round": "Round",
+    "rough": "Rough",
+    "brightness": "brightness",
+    "warmth": "warmth",
+    "roundness": "roundness",
+    "roughness": "roughness"
+  },
   "index": {
     "title": "Semantic caracterisation of sound timbre",
     "introduction1": "Sound timbre is the feature that allow to make a distinction between two sounds of same loudness and same pitch. Sound timbre has multiple dimensions often used to describe sounds.",
@@ -20,12 +31,59 @@
   },
   "Nav": {
     "login": "Log in",
+    "failIndex": "Please log in",
+    "success": "Congratulations you are logged in !",
+    "success2": "You are ready for the experiment",
+    "error": "Wrong username and/or password.",
+    "missing": "You need to fill these fields : ",
     "username": "Username",
     "password": "Password",
-    "logout": "Log out"
+    "logout": "Log out",
+    "logoutsuccess": "You are logged out",
+    "logoutsuccess2": "Thank you for your help"
   },
   "signup": {
-    "title":"Sign up"
+    "title":"Sign up",
+    "presentation":"In order to analyze the connection between your answers and your profil, please fill the following form with your informations (nothing personal).",
+    "username": "Username",
+    "password": "Password",
+    "birthyear":"Birthyear",
+    "gender": " Genre",
+    "male": " Male",
+    "female": " Female",
+    "other": "Other",
+    "country":"Country of residence",
+    "profession":"Profession",
+    "music":"Do you, or did you have a musical activity ?",
+    "yes":"Yes",
+    "no":"No",
+    "musicDis":"Main musical discipline",
+    "musicEd":"Musical Education",
+    "musicAc":"Musical activity",
+    "submit":"SUBMIT",
+    "classicMusic":"Classical musician",
+    "jazzMusic": "Jazz musician",
+    "composer": "Composer",
+    "soundEngineer": "Sound engineer",
+    "soundDesigner":"Sound designer",
+    "conductor":"Conductor",
+    "musicologist":"Musicologist",
+    "acoustician": "Acoustician",
+    "psycho":"Psychoacoustician",
+    "teacherA": "Orchestration/Music theory/(...) teacher",
+    "teacherB": "Sound creation teacher",
+    "RIM": "RIM",
+    "NoneEd":"No musical education",
+    "amator": "Amator education",
+    "semiPro": "Semi-pro education",
+    "pro": "Professional education",
+    "NoneAc":"No musical activity",
+    "amatorOc": "Occasional",
+    "amatorFre": "Frequent ",
+    "semiPro": "Semi-professional",
+    "pro": "Professionnal"
+
+
   },
   "footer": {
     "team": "Perception and sound design group"

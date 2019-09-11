@@ -39,6 +39,10 @@ font-family: 'Lato', sans-serif;
 font-weight: 100;
 }
 
+h3 {
+  margin: 100px;
+}
+
 h1 {
   font-size: 3rem;
   font-family: 'Cormorant Garamond', serif;
@@ -46,6 +50,7 @@ h1 {
 }
 
 #nav {
+font-weight: bold;
 padding: 20px;
 font-size: 1.5rem;
 text-transform: uppercase;
@@ -124,6 +129,46 @@ button:hover {
   border: 1px solid black;
   padding: 10px;
   /* filter: drop-shadow(0px 5px 5px)  */
+}
+
+.words{
+  margin-top: 25px;
+      animation: fadein 2s;
+      -moz-animation: fadein 2s; /* Firefox */
+      -webkit-animation: fadein 2s; /* Safari and Chrome */
+      -o-animation: fadein 2s; /* Opera */
+  }
+  @keyframes fadein {
+      from {
+          opacity:0;
+      }
+      to {
+          opacity:1;
+      }
+  }
+  @-moz-keyframes fadein { /* Firefox */
+      from {
+          opacity:0;
+      }
+      to {
+          opacity:1;
+      }
+  }
+  @-webkit-keyframes fadein { /* Safari and Chrome */
+      from {
+          opacity:0;
+      }
+      to {
+          opacity:1;
+      }
+  }
+  @-o-keyframes fadein { /* Opera */
+      from {
+          opacity:0;
+      }
+      to {
+          opacity: 1;
+      }
 }
 
 </style>

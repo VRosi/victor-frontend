@@ -1,8 +1,7 @@
 <template>
 <div class="signup">
     <h1>{{$t('signup.title')}}</h1>
-      <p>Afin d'observer un lien entre vos réponses et votre profil,
-        voici un rapide formulaire à remplir avec vos informations <br>(nothing personal)</p>
+      <p>{{$t('signup.presentation')}}</p>
     <div class="formy">
 
       <form id="form"  @submit.prevent="submitForms" method="post" novalidate="true">
@@ -10,20 +9,20 @@
 
         <div class='container'>
           <div class>
-            <label class="persontitle" for="name"> <b>Identifiant* : </b> </label><br>
-            <input type='text' placeholder="Nom" id="name" name="name" v-model="person.name"><br><br>
-            <label class="persontitle" for="password"> <b>Mot de passe* : </b> </label><br>
-            <input type="password" placeholder="Mot de passe" id="password" v-model="person.password"><br>
+            <label class="persontitle" for="name"> <b>{{$t('signup.username')}}* : </b> </label><br>
+            <input type='text' id="name" name="name" v-model="person.name"><br><br>
+            <label class="persontitle" for="password"> <b>{{$t('signup.password')}}* : </b> </label><br>
+            <input type="password" id="password" v-model="person.password"><br>
             <!-- <button>show / hide</button> -->
           </div>
           <div>
-            <label class="persontitle" ><b>Année de naissance* : </b></label><br>
+            <label class="persontitle" ><b>{{$t('signup.birthyear')}}* : </b></label><br>
             <DatePicker type="year" format="yyyy" placeholder="ex : 1992" style="width: 150px" v-model="person.birthyear"></DatePicker><br><br>
-            <label class="persontitle" > <b>Sexe* : </b></label>
-            <RoundInput :value="person.gender" @input="inputGender" name ="gender" label="Homme" fromParent="male"/>
-            <RoundInput :value="person.gender" @input="inputGender" name ="gender" label="Femme" fromParent="female"/>
-            <RoundInput :value="person.gender" @input="inputGender" name ="gender" label="Autre" fromParent="other"/><br>
-            <label class="persontitle" for="country"> <b>Pays de résidence* : </b> </label><br>
+            <label class="persontitle" > <b>{{$t('signup.gender')}}* : </b></label>
+            <RoundInput :value="person.gender" @input="inputGender" name ="gender" :label="$t('signup.male')" fromParent="male"/>
+            <RoundInput :value="person.gender" @input="inputGender" name ="gender" :label="$t('signup.female')" fromParent="female"/>
+            <RoundInput :value="person.gender" @input="inputGender" name ="gender" :label="$t('signup.other')" fromParent="other"/><br>
+            <label class="persontitle" for="country"> <b>{{$t('signup.country')}}* : </b> </label><br>
             <input type='text' placeholder="Pays" id="country" v-model="person.country"><br>
           </div>
 
@@ -33,32 +32,32 @@
 
       <div class="container">
         <div>
-          <label class="persontitle"> <b>Profession* : </b></label>
+          <label class="persontitle"> <b>{{$t('signup.profession')}}* : </b></label>
             <checklist :list_arr="professionalActivity" :value="person.professionalActivity" @input="inputProfessions"/>
-            <label> Autre : </label>
+            <label> {{$t('signup.other')}} : </label>
             <input type="text" id="otherCont" name="professionalActivity" v-model="otherProf">
         </div>
 
         <div>
           <div>
-            <label class="persontitle"> <b>Avez-vous une activité musicale ? </b></label><br>
-            <RoundInput class="yesno" :value="person.isMusic" @input="inputMusic" name ="yn" label="Oui" fromParent=true />
-            <RoundInput :value="person.isMusic" @input="inputMusic" name ="yn" label="Non" fromParent=false /><br>
+            <label class="persontitle"> <b>{{$t('signup.music') }}</b></label><br>
+            <RoundInput class="yesno" :value="person.isMusic" @input="inputMusic" name ="yn" :label="$t('signup.yes')" fromParent=true />
+            <RoundInput :value="person.isMusic" @input="inputMusic" name ="yn" :label="$t('signup.no')" fromParent=false /><br>
           </div>
 
           <div id="musical">
-            <label class="persontitle">Principale discipline musicale : </label>
+            <label class="persontitle">{{$t('signup.musicDis')}} : </label>
             <div class="musDis">
               <input type="text" id="musEdin" v-model="person.musicDiscipline">
             </div><br>
-              <label class="persontitle"> Formation musicale* : </label>
+              <label class="persontitle">{{$t('signup.musicEd')}}* : </label>
             <div>
               <RoundInput :value="person.musicEducation" @input="inputMusEd" name ="educ" :label="musicEducation[0].label" :fromParent="musicEducation[0].id" />
               <RoundInput :value="person.musicEducation" @input="inputMusEd" name ="educ" :label="musicEducation[1].label" :fromParent="musicEducation[1].id" />
               <RoundInput :value="person.musicEducation" @input="inputMusEd" name ="educ" :label="musicEducation[2].label" :fromParent="musicEducation[2].id" />
               <RoundInput :value="person.musicEducation" @input="inputMusEd" name ="educ" :label="musicEducation[3].label" :fromParent="musicEducation[3].id" />
             </div><br>
-            <label class="persontitle"> Activité musicale* : </label>
+            <label class="persontitle">{{$t('signup.musicAc')}}* : </label>
             <div>
               <RoundInput :value="person.musicActivity" @input="inputMusAc" name ="acti" :label="musicActivity[0].label" :fromParent="musicActivity[0].id" />
               <RoundInput :value="person.musicActivity" @input="inputMusAc" name ="acti" :label="musicActivity[1].label" :fromParent="musicActivity[1].id" />
@@ -71,7 +70,7 @@
       </div>
 
       <div class="submitdiv">
-          <input class="submitbutton" type="submit" value="SUBMIT" >
+          <input class="submitbutton" type="submit" :value="$t('signup.submit')" >
       </div>
 
 
@@ -99,17 +98,18 @@ export default {
       error:"",
       otherProf:"",
       professionalActivity: [
-        {id:"classicMusic" ,label:"Instrumentiste Classique"},
-        {id:"jazzMusic" ,label: "Instrumentiste Jazz"},
-        {id:"composer" ,label: "Compositeur"},
-        {id:"soundEngineer" ,label: "Ingénieur du son"},
-        {id:"soundDesigner" ,label: "Designer sonore"},
-        {id:"conductor" ,label: "Chef(fe) d'orchestre"},
-        {id:"musicologist" ,label: "Musicologue"},
-        {id:"acoustician" ,label: "Acousticien(ne)"},
-        {id:"teacherA" ,label: "Professeur Orchestration/Analyse..."},
-        {id:"teacherB" ,label: "Professeur création sonore"},
-        {id:"RIM" ,label: "RIM"},
+        {id:"classicMusic" ,label:this.$t('signup.classicMusic')},
+        {id:"jazzMusic" ,label: this.$t('signup.jazzMusic')},
+        {id:"composer" ,label: this.$t('signup.composer')},
+        {id:"soundEngineer" ,label: this.$t('signup.soundEngineer')},
+        {id:"soundDesigner" ,label: this.$t('signup.soundDesigner')},
+        {id:"conductor" ,label: this.$t('signup.conductor')},
+        {id:"musicologist" ,label: this.$t('signup.musicologist')},
+        {id:"acoustician" ,label: this.$t('signup.acoustician')},
+        {id:"psychoacoustician" ,label: this.$t('signup.psycho')},
+        {id:"teacherA" ,label: this.$t('signup.teacherA')},
+        {id:"teacherB" ,label: this.$t('signup.teacherB')},
+        {id:"RIM" ,label: this.$t('signup.RIM')},
       ],
 
       musicEducation: [

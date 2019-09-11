@@ -77,18 +77,18 @@ export default {
                   console.log(this.$store.state.locale)
                   this.$router.push('/' + this.$store.state.locale + '/indexing');
                   this.$Notice.success({
-                      title: 'Congratulations you are logged in',
+                      title: this.$t('Nav.success'),
                       duration: 2,
                       desc: 'The desc will hide when you set render.',
                       render: h => {
-                          return h('span', ["You are ready for the experiment"])
+                          return h('span', [this.$t('Nav.success2')])
                           }
                   });
                 })
                 .catch((err) => {
                   console.log('err',err);
                   this.$Message.error({
-                    content: "Identifiant et/ou mot de passe incorrect(s).",
+                    content: this.$t('Nav.error'),
                     duration: 2,
                     closable: true})
                 });
@@ -98,15 +98,15 @@ export default {
           },
           goSignIn (){
             if (this.person.name.length == 0) {
-                this.error += "Username "}
+                this.error += " - " + this.$t('Nav.username')}
             if (this.person.password.length == 0) {
-                this.error += "- Password "}
+                this.error += " - " + this.$t('Nav.password')}
             if (this.error == 0) {
                 this.testaxios();
               }
               else {
                 this.$Message.error({
-                  content: "you need to fill these fields: " + this.error,
+                  content: this.$t('Nav.missing') + this.error,
                   duration: 2,
                   closable: true})
                 this.error = ""
@@ -114,21 +114,21 @@ export default {
           },
           goLogOut (){
             this.$store.commit('SET_USER', null);
-            this.$router.push('/');
+            this.$router.push('/' + this.$i18n.local + '/');
             Cookie.remove('auth');
             this.dis = true;
             // this.$router.go({path:'/', force: true})
             this.$Notice.info({
-                title: 'You are logged out',
+                title: this.$t('Nav.logoutsuccess'),
                 duration: 2,
                 desc: 'The desc will hide when you set render.',
                 render: h => {
-                    return h('span', ["Thank you for your help"])
+                    return h('span', [this.$t('Nav.logoutsuccess2')])
                     }
             });
           },
           goSignUp (){
-            this.$router.push('/' + $i18n.local + '/signup')
+            this.$router.push('/' + this.$i18n.local + '/signup')
           },
   }
 }

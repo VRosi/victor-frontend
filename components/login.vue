@@ -17,7 +17,7 @@
       </div><br>
       <div class="buttons">
         <Button @click="goSignIn()" name="login">{{$t('Nav.login')}}</Button>
-        <Button :disabled="dis" @click="goLogOut()" name="logout">{{$t('Nav.logout')}}</Button> <!-- :disabled="dis" -->
+        <Button :disabled="disabled" @click="goLogOut()" name="logout">{{$t('Nav.logout')}}</Button> <!-- :disabled="dis" -->
       </div>
     </form>
   </div>
@@ -51,6 +51,11 @@ export default {
       if (!this.$store.state.authUser) {
         this.dis = true;
       }
+  },
+  computed: {
+    disabled() {
+      return !this.$store.state.authUser
+    }
   },
   methods: {
           testaxios() {

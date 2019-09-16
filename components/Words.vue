@@ -1,17 +1,17 @@
 <template>
   <div >
     <h1 class="words">{{ randomTitle(word_list)}}</h1>
-<p>
-  Ces 4 termes font partis des termes les plus frequemment utilisés pour décrire le timbre sonore.
-  Ils sont tirés d'un lexique sonore, <a :href="urlMax" target="_blank">
-  fruit du travail de Maxime Carron</a>.
-  Sachez que ces mots n'ont pas vocations à représenter l'ensemble des dimensions du timbre.
+<p>{{$t('words.presentation1')}}
+  <a :href="urlMax" target="_blank">
+  {{$t('words.presentationLink')}}</a>
 </p>
 
 <h3>Avant de commencer, veuillez vous assurer que vous êtes dans un lieu calme avec un bon système son
    (de préférence un casque audio).  Profitez de l'extrait de son ci-dessous pour régler le volume.
 </h3>
-
+<div class="note">
+      <audio :src="url" controls type="audio/wav"></audio>
+</div>
 
 <h3>Cliquez sur le terme à étudier : </h3>
 <div class="posButton">
@@ -32,7 +32,7 @@ export default {
   },
   data() {
     return {
-      url: "./sound-test/Violin.wav",
+      url: "/sound_test/Violin.wav",
       word_list:[this.$t('words.bright'), this.$t('words.warm'), this.$t('words.round'), this.$t('words.rough')],
       urlMax: "https://www.researchgate.net/publication/320018306_Speaking_about_sounds_A_tool_for_communication_on_sound_features",
 
@@ -87,12 +87,15 @@ p, h3 {
   margin: 10px 200px;
   padding: 40px;
 }
+
 button {
   padding: 10px 20px;
   width: 150px;
   margin: 20px;
   font-size: 1.5rem;
 }
+
+
 
 
 

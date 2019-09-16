@@ -1,0 +1,340 @@
+{
+  "sounds": [
+    {
+      "name": "n_Fl-flatt-C7-mf.wav",
+      "instrument": "Fl",
+      "playingStye": "flatt",
+      "pitch": "C7",
+      "dynamic": "mf",
+      "url": "/assets/n_Fl-flatt-C7-mf.wav"
+    },
+    {
+      "name": "n_Fl-ord-C5-ff.wav",
+      "instrument": "Fl",
+      "playingStye": "ord",
+      "pitch": "C5",
+      "dynamic": "ff",
+      "url": "/assets/n_Fl-ord-C5-ff.wav"
+    },
+    {
+      "name": "n_Fl-aeolian+ord-C5-ff.wav",
+      "instrument": "Fl",
+      "playingStye": "aeolian+ord",
+      "pitch": "C5",
+      "dynamic": "ff",
+      "url": "/assets/n_Fl-aeolian+ord-C5-ff.wav"
+    },
+    {
+      "name": "n_Fl-flatt-C6-pp.wav",
+      "instrument": "Fl",
+      "playingStye": "flatt",
+      "pitch": "C6",
+      "dynamic": "pp",
+      "url": "/assets/n_Fl-flatt-C6-pp.wav"
+    },
+    {
+      "name": "n_Fl-ord-C7-ff.wav",
+      "instrument": "Fl",
+      "playingStye": "ord",
+      "pitch": "C7",
+      "dynamic": "ff",
+      "url": "/assets/n_Fl-ord-C7-ff.wav"
+    },
+    {
+      "name": "n_Fl-mul-G5_F4_C#6-mf.wav",
+      "instrument": "Fl",
+      "playingStye": "mul",
+      "pitch": "G5_F4_C#6",
+      "dynamic": "mf",
+      "url": "/assets/n_Fl-mul-G5_F4_C#6-mf.wav"
+    },
+    {
+      "name": "n_Fl-flatt-C4-pp.wav",
+      "instrument": "Fl",
+      "playingStye": "flatt",
+      "pitch": "C4",
+      "dynamic": "pp",
+      "url": "/assets/n_Fl-flatt-C4-pp.wav"
+    },
+    {
+      "name": "n_Fl-aeolian+ord-C7-ff.wav",
+      "instrument": "Fl",
+      "playingStye": "aeolian+ord",
+      "pitch": "C7",
+      "dynamic": "ff",
+      "url": "/assets/n_Fl-aeolian+ord-C7-ff.wav"
+    },
+    {
+      "name": "n_Fl-flatt-C5-mf.wav",
+      "instrument": "Fl",
+      "playingStye": "flatt",
+      "pitch": "C5",
+      "dynamic": "mf",
+      "url": "/assets/n_Fl-flatt-C5-mf.wav"
+    },
+    {
+      "name": "n_Fl-flatt-C5-ff.wav",
+      "instrument": "Fl",
+      "playingStye": "flatt",
+      "pitch": "C5",
+      "dynamic": "ff",
+      "url": "/assets/n_Fl-flatt-C5-ff.wav"
+    },
+    {
+      "name": "n_Fl-mul-G#5_G4+_D6-mf.wav",
+      "instrument": "Fl",
+      "playingStye": "mul",
+      "pitch": "G#5_G4+_D6",
+      "dynamic": "mf",
+      "url": "/assets/n_Fl-mul-G#5_G4+_D6-mf.wav"
+    },
+    {
+      "name": "n_Fl-aeolian+ord-C6-pp.wav",
+      "instrument": "Fl",
+      "playingStye": "aeolian+ord",
+      "pitch": "C6",
+      "dynamic": "pp",
+      "url": "/assets/n_Fl-aeolian+ord-C6-pp.wav"
+    },
+    {
+      "name": "n_Fl-ord-C6-pp.wav",
+      "instrument": "Fl",
+      "playingStye": "ord",
+      "pitch": "C6",
+      "dynamic": "pp",
+      "url": "/assets/n_Fl-ord-C6-pp.wav"
+    },
+    {
+      "name": "n_Fl-aeolian+ord-C7-mf.wav",
+      "instrument": "Fl",
+      "playingStye": "aeolian+ord",
+      "pitch": "C7",
+      "dynamic": "mf",
+      "url": "/assets/n_Fl-aeolian+ord-C7-mf.wav"
+    },
+    {
+      "name": "n_Fl-ord-C7-mf.wav",
+      "instrument": "Fl",
+      "playingStye": "ord",
+      "pitch": "C7",
+      "dynamic": "mf",
+      "url": "/assets/n_Fl-ord-C7-mf.wav"
+    },
+    {
+      "name": "n_Fl-mul-F#4_C5-mf.wav",
+      "instrument": "Fl",
+      "playingStye": "mul",
+      "pitch": "F#4_C5",
+      "dynamic": "mf",
+      "url": "/assets/n_Fl-mul-F#4_C5-mf.wav"
+    },
+    {
+      "name": "n_Fl-aeolian+ord-C5-mf.wav",
+      "instrument": "Fl",
+      "playingStye": "aeolian+ord",
+      "pitch": "C5",
+      "dynamic": "mf",
+      "url": "/assets/n_Fl-aeolian+ord-C5-mf.wav"
+    },
+    {
+      "name": "n_Fl-ord-C5-mf.wav",
+      "instrument": "Fl",
+      "playingStye": "ord",
+      "pitch": "C5",
+      "dynamic": "mf",
+      "url": "/assets/n_Fl-ord-C5-mf.wav"
+    },
+    {
+      "name": "n_Fl-aeolian+ord-C4-pp.wav",
+      "instrument": "Fl",
+      "playingStye": "aeolian+ord",
+      "pitch": "C4",
+      "dynamic": "pp",
+      "url": "/assets/n_Fl-aeolian+ord-C4-pp.wav"
+    },
+    {
+      "name": "n_Fl-mul-C#6+_C5+_D#5_G5-mf.wav",
+      "instrument": "Fl",
+      "playingStye": "mul",
+      "pitch": "C#6+_C5+_D#5_G5",
+      "dynamic": "mf",
+      "url": "/assets/n_Fl-mul-C#6+_C5+_D#5_G5-mf.wav"
+    },
+    {
+      "name": "n_Fl-flatt-C7-ff.wav",
+      "instrument": "Fl",
+      "playingStye": "flatt",
+      "pitch": "C7",
+      "dynamic": "ff",
+      "url": "/assets/n_Fl-flatt-C7-ff.wav"
+    },
+    {
+      "name": "n_Fl-ord-C4-pp.wav",
+      "instrument": "Fl",
+      "playingStye": "ord",
+      "pitch": "C4",
+      "dynamic": "pp",
+      "url": "/assets/n_Fl-ord-C4-pp.wav"
+    },
+    {
+      "name": "n_Fl-aeolian+ord-C4-ff.wav",
+      "instrument": "Fl",
+      "playingStye": "aeolian+ord",
+      "pitch": "C4",
+      "dynamic": "ff",
+      "url": "/assets/n_Fl-aeolian+ord-C4-ff.wav"
+    },
+    {
+      "name": "n_Fl-flatt-C7-pp.wav",
+      "instrument": "Fl",
+      "playingStye": "flatt",
+      "pitch": "C7",
+      "dynamic": "pp",
+      "url": "/assets/n_Fl-flatt-C7-pp.wav"
+    },
+    {
+      "name": "n_Fl-ord-C4-ff.wav",
+      "instrument": "Fl",
+      "playingStye": "ord",
+      "pitch": "C4",
+      "dynamic": "ff",
+      "url": "/assets/n_Fl-ord-C4-ff.wav"
+    },
+    {
+      "name": "n_Fl-flatt-C6-mf.wav",
+      "instrument": "Fl",
+      "playingStye": "flatt",
+      "pitch": "C6",
+      "dynamic": "mf",
+      "url": "/assets/n_Fl-flatt-C6-mf.wav"
+    },
+    {
+      "name": "n_Fl-flatt-C4-mf.wav",
+      "instrument": "Fl",
+      "playingStye": "flatt",
+      "pitch": "C4",
+      "dynamic": "mf",
+      "url": "/assets/n_Fl-flatt-C4-mf.wav"
+    },
+    {
+      "name": "n_Fl-flatt-C5-pp.wav",
+      "instrument": "Fl",
+      "playingStye": "flatt",
+      "pitch": "C5",
+      "dynamic": "pp",
+      "url": "/assets/n_Fl-flatt-C5-pp.wav"
+    },
+    {
+      "name": "n_Fl-aeolian+ord-C6-ff.wav",
+      "instrument": "Fl",
+      "playingStye": "aeolian+ord",
+      "pitch": "C6",
+      "dynamic": "ff",
+      "url": "/assets/n_Fl-aeolian+ord-C6-ff.wav"
+    },
+    {
+      "name": "n_Fl-mul-A#4+_D5+-mf.wav",
+      "instrument": "Fl",
+      "playingStye": "mul",
+      "pitch": "A#4+_D5+",
+      "dynamic": "mf",
+      "url": "/assets/n_Fl-mul-A#4+_D5+-mf.wav"
+    },
+    {
+      "name": "n_Fl-ord-C6-ff.wav",
+      "instrument": "Fl",
+      "playingStye": "ord",
+      "pitch": "C6",
+      "dynamic": "ff",
+      "url": "/assets/n_Fl-ord-C6-ff.wav"
+    },
+    {
+      "name": "n_Fl-ord-C6-mf.wav",
+      "instrument": "Fl",
+      "playingStye": "ord",
+      "pitch": "C6",
+      "dynamic": "mf",
+      "url": "/assets/n_Fl-ord-C6-mf.wav"
+    },
+    {
+      "name": "n_Fl-aeolian+ord-C6-mf.wav",
+      "instrument": "Fl",
+      "playingStye": "aeolian+ord",
+      "pitch": "C6",
+      "dynamic": "mf",
+      "url": "/assets/n_Fl-aeolian+ord-C6-mf.wav"
+    },
+    {
+      "name": "n_Fl-ord-C7-pp.wav",
+      "instrument": "Fl",
+      "playingStye": "ord",
+      "pitch": "C7",
+      "dynamic": "pp",
+      "url": "/assets/n_Fl-ord-C7-pp.wav"
+    },
+    {
+      "name": "n_Fl-mul-A#5_G#4_C#6_C5-mf.wav",
+      "instrument": "Fl",
+      "playingStye": "mul",
+      "pitch": "A#5_G#4_C#6_C5",
+      "dynamic": "mf",
+      "url": "/assets/n_Fl-mul-A#5_G#4_C#6_C5-mf.wav"
+    },
+    {
+      "name": "n_Fl-flatt-C4-ff.wav",
+      "instrument": "Fl",
+      "playingStye": "flatt",
+      "pitch": "C4",
+      "dynamic": "ff",
+      "url": "/assets/n_Fl-flatt-C4-ff.wav"
+    },
+    {
+      "name": "n_Fl-aeolian+ord-C7-pp.wav",
+      "instrument": "Fl",
+      "playingStye": "aeolian+ord",
+      "pitch": "C7",
+      "dynamic": "pp",
+      "url": "/assets/n_Fl-aeolian+ord-C7-pp.wav"
+    },
+    {
+      "name": "n_Fl-ord-C5-pp.wav",
+      "instrument": "Fl",
+      "playingStye": "ord",
+      "pitch": "C5",
+      "dynamic": "pp",
+      "url": "/assets/n_Fl-ord-C5-pp.wav"
+    },
+    {
+      "name": "n_Fl-aeolian+ord-C5-pp.wav",
+      "instrument": "Fl",
+      "playingStye": "aeolian+ord",
+      "pitch": "C5",
+      "dynamic": "pp",
+      "url": "/assets/n_Fl-aeolian+ord-C5-pp.wav"
+    },
+    {
+      "name": "n_Fl-flatt-C6-ff.wav",
+      "instrument": "Fl",
+      "playingStye": "flatt",
+      "pitch": "C6",
+      "dynamic": "ff",
+      "url": "/assets/n_Fl-flatt-C6-ff.wav"
+    },
+    {
+      "name": "n_Fl-ord-C4-mf.wav",
+      "instrument": "Fl",
+      "playingStye": "ord",
+      "pitch": "C4",
+      "dynamic": "mf",
+      "url": "/assets/n_Fl-ord-C4-mf.wav"
+    },
+    {
+      "name": "n_Fl-aeolian+ord-C4-mf.wav",
+      "instrument": "Fl",
+      "playingStye": "aeolian+ord",
+      "pitch": "C4",
+      "dynamic": "mf",
+      "url": "/assets/n_Fl-aeolian+ord-C4-mf.wav"
+    }
+  ]
+}

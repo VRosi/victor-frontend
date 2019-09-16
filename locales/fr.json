@@ -5,8 +5,8 @@
     "signup": ".inscription"
   },
   "words": {
-    "presentation1":"",
-    "presentationLink":"",
+    "presentation1":"Ces 4 termes font partis des termes les plus frequemment utilisés pour décrire le timbre sonore. Ils sont tirés d'un lexique sonore développé dans le cadre de ",
+    "presentationLink":"la thèse de Maxime Carron",
     "bright": "Brillant",
     "warm": "Chaud",
     "round": "Rond",
@@ -14,7 +14,8 @@
     "brightness": "brillance",
     "warmth": "chaleur",
     "roundness": "rondeur",
-    "roughness": "rugosité"
+    "roughness": "rugosité",
+    "not": "pas"
   },
   "index": {
     "title": "Caractérisation sémantique du timbre sonore",
@@ -83,7 +84,9 @@
     "amatorOc": "Amateur occasionnelle",
     "amatorFre": "Amateur fréquente",
     "semiPro": "Semi-professionnelle",
-    "pro": "Professionnelle"
+    "pro": "Professionnelle",
+    "exist": "Cet identifiant est déjà utilisé",
+    "missing": ""
 
   },
   "footer": {

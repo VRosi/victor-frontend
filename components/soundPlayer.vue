@@ -5,8 +5,8 @@
           <audio id='audioSample' :src="url" controls type="audio/wav"></audio>
       </figure>
     </div>
-    <div>
-      not {{word}}
+    <div v-if="!this.disabling">
+      {{$t('words.not')}} {{word}}
       <input :disabled="this.disabling" class="slider"
              type="range"
              min="0"
@@ -55,11 +55,11 @@ export default {
 
 <style lang="css" scoped>
 .note{
-  padding: 20px;
+  padding: 10px;
   border-radius: 4px;
   background-color: #FFFFFF ;
   box-shadow: 0px 0px 8px lightgrey;
-  margin: auto;
+  margin-right: 20px;
   margin-bottom: 20px;
   float: left;
 }

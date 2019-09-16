@@ -171,4 +171,10 @@ button:hover {
       }
 }
 
+audio {
+  outline: 0;
+  filter: drop-shadow(2px 2px 2px);
+  margin: 10px auto
+}
+
 </style>

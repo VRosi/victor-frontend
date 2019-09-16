@@ -1,6 +1,8 @@
 <template>
 <div class="signup">
+  <div class="intro">
     <h1>{{$t('signup.title')}}</h1>
+  </div><br>
       <p>{{$t('signup.presentation')}}</p>
     <div class="formy">
 
@@ -45,13 +47,13 @@
             <RoundInput :value="person.isMusic" @input="inputMusic" name ="yn" :label="$t('signup.no')" fromParent=false /><br>
           </div>
 
-          <div id="musical">
+          <div v-if="display" id="musical">
             <label class="persontitle">{{$t('signup.musicDis')}} : </label>
-            <div class="musDis">
+            <div  class="musDis">
               <input type="text" id="musEdin" v-model="person.musicDiscipline">
             </div><br>
               <label class="persontitle">{{$t('signup.musicEd')}}* : </label>
-            <div>
+            <div >
               <RoundInput :value="person.musicEducation" @input="inputMusEd" name ="educ" :label="musicEducation[0].label" :fromParent="musicEducation[0].id" />
               <RoundInput :value="person.musicEducation" @input="inputMusEd" name ="educ" :label="musicEducation[1].label" :fromParent="musicEducation[1].id" />
               <RoundInput :value="person.musicEducation" @input="inputMusEd" name ="educ" :label="musicEducation[2].label" :fromParent="musicEducation[2].id" />
@@ -80,6 +82,7 @@
   </div>
 
 </div>
+
 </template>
 ---------------------------------------------------------------------------------------------------------------------
 
@@ -95,6 +98,7 @@ export default {
   },
   data() {
     return {
+      display: true,
       error:"",
       otherProf:"",
       professionalActivity: [
@@ -156,6 +160,9 @@ watch: {
           },
           inputMusic(val) {
             this.person.isMusic = val;
+            if (this.person.isMusic === "false"){this.display= false}
+            else {this.display= true}
+            console.log(this.display)
           },
           inputMusEd(val) {
             this.person.musicEducation = val;
@@ -194,8 +201,21 @@ watch: {
               }).then((res) => {
                 console.log('res',res);
                 this.$store.commit('SET_USER', res.data.user_id)
+                this.$root.$emit('logged', this.person.name);
+                this.$router.push('/_lang/indexing');
+                this.$Notice.success({
+                    title: 'Congratulations you signed up',
+                    desc: 'The desc will hide when you set render.',
+                    render: h => {
+                        return h('span', ["You are ready for the experiment"])
+                        }
+                      });
               }).catch((err) => {
                 console.log('err',err);
+                this.$Message.error({
+                  content: this.$t('signup.exist'),
+                  duration: 2,
+                  closable: true})
               });
             } catch (e) {
               console.log('err',e);
@@ -223,14 +243,6 @@ watch: {
 
               if (this.error == 0) {
                 this.testaxios();
-                this.$router.push('/_lang/indexing');
-                this.$Notice.success({
-                    title: 'Congratulations you signed up',
-                    desc: 'The desc will hide when you set render.',
-                    render: h => {
-                        return h('span', ["You are ready for the experiment"])
-                        }
-                      });
               }
               else {
                 this.$Message.error({
@@ -288,9 +300,9 @@ input {
 }
 
 
-.signup{
-  /* background: linear-gradient(#F5F0EB, #094683); */
-  padding: 30px;
+.intro {
+  text-align: left;
+  margin: 0px 100px auto;
 }
 
 .yesno {
@@ -301,8 +313,7 @@ input {
 .formy {
   text-align: left;
   box-sizing: content-box;
-  padding: 30px auto;
-  margin: 80px 150px;
+  margin: 100px auto;
   line-height: 2;
   width: 80%;
   border-radius: 8px;
@@ -316,10 +327,11 @@ input {
 }
 
 .container{
+  padding: 20px;
   display: flex;
   flex-shrink: 4;
   justify-content: space-evenly;
-  align-items: center;
+  /* align-items: center; */
 }
 .submitdiv{
   text-align: center;

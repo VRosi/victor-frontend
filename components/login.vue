@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="login">
     <form>
-      <div class="idPs">
+      <div v-if="!logged" class="idPs">
         <Icon type="ios-person-outline" slot="prepend"></Icon>
         <input type="text" :placeholder="$t('Nav.username')" v-model="person.name"
                 onfocus="this.placeholder = ''"
@@ -14,7 +14,11 @@
               onblur="this.placeholder = '$t('Nav.password')'">
 
       </input>
-      </div><br>
+      </div>
+      <div class="disName" v-else>
+          <b>{{this.username}}</b>
+      </div>
+      <br>
       <div class="buttons">
         <Button @click="goSignIn()" name="login">{{$t('Nav.login')}}</Button>
         <Button :disabled="disabled" @click="goLogOut()" name="logout">{{$t('Nav.logout')}}</Button> <!-- :disabled="dis" -->
@@ -39,7 +43,8 @@ export default {
   },
   data() {
     return {
-      dis: false,
+      username: '',
+      logged: false,
       error:"",
       person: {
         name: "",
@@ -48,9 +53,18 @@ export default {
     }
   },
   created: function() {
-      if (!this.$store.state.authUser) {
-        this.dis = true;
+      if (!this.$store.state.authUser) {this.dis = true;}
+      else {
+        this.username = this.$store.state.authUser.name;
+        this.logged= true;
       }
+  },
+  mounted: function () {
+    this.$root.$on('logged', (name) => { // here you need to use the arrow function
+     this.username = name;
+     this.logged= true;
+     console.log(this.username);
+    })
   },
   computed: {
     disabled() {
@@ -59,7 +73,7 @@ export default {
   },
   methods: {
           testaxios() {
-              console.log('test');
+              // console.log('test');
               try {
                 axios.post('http://localhost:8000/signin', {
                   name: this.person.name,
@@ -73,8 +87,8 @@ export default {
                 .then((res) => {
                   console.log('res',res);
                   this.$store.commit('SET_USER', res.data.user_id);
-                  this.dis = false;
-                  console.log(this.$store.state.locale)
+                  this.logged = true; // display name if logged in
+                  this.username = this.person.name;
                   this.$router.push('/' + this.$store.state.locale + '/indexing');
                   this.$Notice.success({
                       title: this.$t('Nav.success'),
@@ -116,7 +130,7 @@ export default {
             this.$store.commit('SET_USER', null);
             this.$router.push('/' + this.$i18n.local + '/');
             Cookie.remove('auth');
-            this.dis = true;
+            this.logged= false;
             // this.$router.go({path:'/', force: true})
             this.$Notice.info({
                 title: this.$t('Nav.logoutsuccess'),
@@ -176,5 +190,12 @@ export default {
   display: flex;
   margin-left: 15px;
   justify-content: space-between;
+}
+
+.disName{
+  margin: 0px 90px;
+  padding: 5px 0px;
+  text-align: center;
+  text-transform: uppercase;
 }
 </style>

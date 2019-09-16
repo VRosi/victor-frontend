@@ -5,7 +5,8 @@
     "signup": ".signup"
   },
   "words": {
-    "presentation1":"",
+    "presentation1":"This 4 words are some of the most used terms to describe sounds. They are parts of a sound lexicon developed as part of ",
+    "presentationLink":"Maxime Carron's thesis.",
     "bright": "Bright",
     "warm": "Warm",
     "round": "Round",
@@ -13,7 +14,8 @@
     "brightness": "brightness",
     "warmth": "warmth",
     "roundness": "roundness",
-    "roughness": "roughness"
+    "roughness": "roughness",
+    "not": "not"
   },
   "index": {
     "title": "Semantic caracterisation of sound timbre",
@@ -81,7 +83,8 @@
     "amatorOc": "Occasional",
     "amatorFre": "Frequent ",
     "semiPro": "Semi-professional",
-    "pro": "Professionnal"
+    "pro": "Professionnal",
+    "exist": "This username already exists"
 
 
   },

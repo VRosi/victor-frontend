@@ -6,13 +6,14 @@
       <sound :word="word" :sound="sound" :indexRef="index" :indexSound ="indexSound" key=sound.id @input="updateIndex" />,
     </li>
     </ul> -->
-    <sound v-for="(sound, index) in soundList" :key="index" :word="word" :sound="sound" :indexRef="index" :indexSound ="indexSound" key=sound.id @input="updateIndex" />
+    <sound v-for="(sound, index) in usedBatch" :key="index" :word="word" :sound="sound" :indexRef="index" :indexSound ="indexSound" key=sound.id @input="updateIndex" />
   </div>
 
 </template>
 
 <script>
 import sound from '@/components/soundIndexing.vue'
+import axios from 'axios'
 
 export default {
   components: {
@@ -30,8 +31,13 @@ export default {
   data() {
     return {
       indexSound: 0,
+      batches: [],
+      usedBatch: [],
 
     }
+  },
+  created(){
+    this.fetchData()
   },
   methods: {
     test(index) {
@@ -40,6 +46,22 @@ export default {
     updateIndex(val) {
       this.indexSound += val;
       // console.log(this.indexSound)
+    },
+    fetchData () {
+      axios.get('/sound_batches.json')
+      .then(response => {
+        this.batches = response.data
+        console.log("list_01",this.batches)
+        for (var i = 0; i < this.soundList.length; i++) {
+          if (this.batches.list_01.indexOf(this.soundList[i].name) > -1){
+            this.usedBatch.push(this.soundList[i])
+          }
+        }
+        console.log("usedBatch",this.usedBatch)
+      })
+      .catch(error => {
+        console.log(error)
+      })
     }
   }
 }

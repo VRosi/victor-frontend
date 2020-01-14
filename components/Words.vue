@@ -33,7 +33,7 @@ export default {
   data() {
     return {
       url: "/sound_test/Violin.wav",
-      word_list:[this.$t('words.bright'), this.$t('words.warm'), this.$t('words.round'), this.$t('words.rough')],
+      word_list:['bright', 'warm', 'rough', 'round'],
       urlMax: "https://www.researchgate.net/publication/320018306_Speaking_about_sounds_A_tool_for_communication_on_sound_features",
 
     }
